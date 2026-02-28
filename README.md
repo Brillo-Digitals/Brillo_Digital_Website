@@ -1,84 +1,87 @@
-# Brillo_Digital_Website
-Brillo Digital is a premium digital studio focused on building high impact digital experiences across web, mobile, design, and marketing.
+# Brillo Digitals 🚀
 
-This repository contains the official Brillo Digital website, created to showcase selected work, strategic thinking, and execution across multiple disciplines.
+Brillo Digitals is a premium digital studio focused on building high-impact digital experiences across web, mobile, design, and marketing. This repository contains the official Brillo Digitals website, showcasing our selected work, strategic thinking, and technical execution.
 
-About Brillo Digital
+## 🌟 Features
 
-Brillo Digital operates at the intersection of technology, design, and growth strategy.
+- **Premium UI/UX**: A modern, glassmorphic design system with a custom-engineered cursor and smooth interactions.
+- **Dynamic Portfolio**: Categorized showcase of projects including Web Applications, Mobile Apps, and Brand Systems.
+- **Direct APK Downloads**: Integrated mobile application distribution directly from the portfolio.
+- **Open Source Integration**: Live GitHub repository showcase reflecting real-time technical contributions.
+- **Expertise & Skills**: Detailed breakdown of our core competencies in technology and design.
+- **Responsive & Optimized**: Fully responsive layouts optimized for all devices with a focus on performance.
 
-We do not just build websites or apps.
-We design systems that communicate clearly, perform efficiently, and convert consistently.
+## 🛠️ Technology Stack
 
-Core areas of expertise:
+| Category         | Technologies                                                                 |
+| ---------------- | ---------------------------------------------------------------------------- |
+| **Frontend**     | React 19, TypeScript, Vite                                                  |
+| **Styling**      | Tailwind CSS, PostCSS                                                        |
+| **Animations**   | Framer Motion                                                                |
+| **Icons**        | Lucide React, React Icons                                                    |
+| **Deployment**   | Optimized for Vercel / Netlify / GitHub Pages                                |
 
-• Application Development
-• Web Development
-• Interface and Experience Design
-• Brand Presentation
-• Digital Marketing Strategy
+## 🚀 Getting Started
 
-Each project reflects a balance of aesthetics, performance, and measurable business value.
+To run this project locally, follow these steps:
 
-Philosophy
+### Prerequisites
 
-Premium digital work is not defined by visuals alone. It is defined by:
+- Node.js (Latest LTS recommended)
+- npm or yarn
 
-• Clarity of structure
-• Intentional user journeys
-• Performance optimization
-• Strategic positioning
-• Scalable architecture
+### Installation
 
-Brillo Digital approaches every build with long term vision rather than short term delivery.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Brillo-Digitals/Brillo_Digital_Website.git
+   ```
 
-What This Website Represents
+2. **Navigate to the project directory:**
+   ```bash
+   cd "Brillo Digitals Website"
+   ```
 
-This platform serves as:
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-• A curated showcase of selected projects
-• A representation of technical capability
-• A demonstration of design standards
-• A digital brand presence
-• A lead generation channel
+### Development
 
-The website itself is built to reflect the same quality standards applied to client projects.
+Run the development server:
+```bash
+npm run dev
+```
+The site will be available at `http://localhost:5173`.
 
-Technical Foundation
+### Building for Production
 
-The platform emphasizes:
+Create an optimized production build:
+```bash
+npm run build
+```
 
-• Clean and scalable structure
-• Responsive design across devices
-• Optimized performance
-• Structured SEO foundations
-• Maintainable architecture
+## 📂 Project Structure
 
-The goal is not complexity. The goal is precision.
+```bash
+src/
+├── assets/          # Static assets and images
+├── components/      # Reusable UI components (Hero, Portfolio, Contact, etc.)
+├── App.tsx          # Main application entry point
+├── index.css        # Global styles and Tailwind directives
+└── main.tsx         # React DOM rendering
+```
 
-Selected Work
+## 🤝 Contact & Collaboration
 
-Projects featured demonstrate experience in:
+Brillo Digitals partners with founders, startups, and growing brands that value quality execution and strategic thinking.
 
-• Custom web applications
-• High conversion marketing websites
-• UI and UX systems
-• Brand aligned digital platforms
-• Performance driven landing pages
+- **Founder**: Uthman Adesiyan
+- **Email**: [uthmanadesiyan112@email.com](mailto:uthmanadesiyan112@email.com)
+- **Website**: [Brillo Digitals](https://brillodigitals.com) (Coming soon)
 
-Each project focuses on impact, not volume.
+---
 
-Positioning
+Built with precision by Brillo Digitals.
 
-Brillo Digital partners with founders, startups, and growing brands that value quality execution and strategic thinking.
-
-This is not template driven output.
-It is structured digital craftsmanship.
-
-Live Website
-
-Contact
-
-For collaborations and strategic partnerships:
-
-Email: uthmanadesiyan112@email.com
