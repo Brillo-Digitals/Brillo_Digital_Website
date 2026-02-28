@@ -45,15 +45,16 @@ const PORTFOLIO_DATA = [
     },
     {
         id: 3,
-        title: "Brillo eCommerce",
-        description: "A fully custom Shopify theme development providing a high-converting, headless-like experience.",
-        category: TABS[4],
-        tags: ["Shopify", "Liquid", "Tailwind", "JavaScript"],
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-        live: "#",
+        title: "Brillo Digitals Website",
+        description: "A custom React Js Website development.",
+        category: TABS[2],
+        tags: ["React", "TypeScript", "TailwindCss", "JavaScript"],
+        image: "/images/brillo_digitals_website.png",
+        live: "/",
+        github: "https://github.com/Brillo-Digitals/Brillo_Digital_Website",
         hasApk: false,
         downloadLink: "#",
-        downloadName: "SecurePayMobile.apk"
+        downloadName: ""
     },
     {
         id: 4,
