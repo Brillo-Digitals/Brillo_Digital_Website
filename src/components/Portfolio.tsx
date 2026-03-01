@@ -28,8 +28,8 @@ const PORTFOLIO_DATA = [
         image: "/images/rhythm.png",
         github: "https://github.com/Brillo-Digitals/rhythm_habit_building_app",
         hasApk: true,
-        downloadLink: "#",
-        downloadName: "Rhythm-v1.0.0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/rhythm-v-1-0-0.apk",
+        downloadName: "Rhythm-v1-0-0.apk"
     },
     {
         id: 2,
@@ -65,8 +65,8 @@ const PORTFOLIO_DATA = [
         image: "/images/forcastr.png",
         github: "#",
         hasApk: true,
-        downloadLink: "#",
-        downloadName: "forcastr-v1.0.0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/forcastr-v1-0-0.apk",
+        downloadName: "forcastr-v1-0-0.apk"
     },
     {
         id: 5,
@@ -75,10 +75,10 @@ const PORTFOLIO_DATA = [
         category: TABS[1],
         tags: ["Flutter", "Dart", "Shared Preferences", "Provider"],
         image: "/images/cgpa_calculator.png",
-        github: "#",
+        github: "https://github.com/Brillo-Digitals/cgpa_calculator",
         hasApk: true,
-        downloadLink: "#",
-        downloadName: "cgpa-calculator-v1.0.0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/cgpa-calculator-v-1-0-0.apk",
+        downloadName: "cgpa-calculator-v1-0-0.apk"
     }
     ,
     {
@@ -88,10 +88,10 @@ const PORTFOLIO_DATA = [
         category: TABS[1],
         tags: ["Flutter", "Dart",],
         image: "/images/warden.png",
-        github: "#",
+        github: "https://github.com/Brillo-Digitals/Warden_Cryo_Game",
         hasApk: true,
-        downloadLink: "#",
-        downloadName: "warden-v1.0.0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/warden-v-1-0-0.apk",
+        downloadName: "warden-v1-0-0.apk"
     },
     {
         id: 7,
@@ -100,10 +100,10 @@ const PORTFOLIO_DATA = [
         category: TABS[1],
         tags: ["Flutter", "Dart", "Hive", "Provider"],
         image: "/images/to_do_app.png",
-        github: "#",
+        github: "https://github.com/Brillo-Digitals/to_to_app",
         hasApk: true,
-        downloadLink: "#",
-        downloadName: "todo-app-v1.0.0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/to-do-v-1-0-0.apk",
+        downloadName: "todo-app-v1-0-0.apk"
     },
     {
         id: 8,
@@ -112,10 +112,10 @@ const PORTFOLIO_DATA = [
         category: TABS[1],
         tags: ["Flutter", "Dart", "Provider"],
         image: "/images/quizler.png",
-        github: "#",
+        github: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/quizzler-v-1-0-0.apk",
         hasApk: true,
-        downloadLink: "#",
-        downloadName: "quizzler-v1.0.0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/Quizzler-Brain-Tester",
+        downloadName: "quizzler-v1-0-0.apk"
     },
     {
         id: 9,
@@ -124,8 +124,8 @@ const PORTFOLIO_DATA = [
         category: TABS[2],
         tags: ["React", "TypeScript", "TailwindCss", "JavaScript"],
         image: "/images/a4scollection.png",
-        live: "/",
-        github: "https://github.com/Brillo-Digitals/Brillo_Digital_Website",
+        live: "https://a4scollections.netlify.app/",
+        github: "https://github.com/Brillo-Digitals/A4-s-Collections",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
