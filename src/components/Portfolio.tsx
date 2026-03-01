@@ -95,6 +95,19 @@ const PORTFOLIO_DATA = [
     },
     {
         id: 7,
+        title: "World War two",
+        description: "A 2D action-packed Python game built with Pygame featuring custom physics, enemy AI, and dynamic level progression.",
+        category: TABS[3],
+        tags: ["Python", "Pygame", "Game Development", "OOP"],
+        image: "/images/ww2.png",
+        live: "#",
+        github: "#",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 8,
         title: "Todo App",
         description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
         category: TABS[1],
@@ -106,7 +119,20 @@ const PORTFOLIO_DATA = [
         downloadName: "todo-app-v1-0-0.apk"
     },
     {
-        id: 8,
+        id: 9,
+        title: "PulseLab Beat Maker",
+        description: "An interactive beat-making desktop application built with Python and Pygame, featuring step sequencing, real-time playback, layered drum kits, and tempo control.",
+        category: TABS[3],
+        tags: ["Python", "Pygame", "Audio Processing", "Music Tech"],
+        image: "/images/beat_maker.png",
+        live: "#",
+        github: "#",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 10,
         title: "Quizzler ",
         description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
         category: TABS[1],
@@ -118,7 +144,20 @@ const PORTFOLIO_DATA = [
         downloadName: "quizzler-v1-0-0.apk"
     },
     {
-        id: 9,
+        id: 11,
+        title: "KeyWave Piano",
+        description: "A digital piano simulator built with Python and Pygame, supporting keyboard-to-note mapping, polyphonic sound playback, octave shifting, and dynamic key animations.",
+        category: TABS[3],
+        tags: ["Python", "Pygame", "Sound Engine", "Interactive App"],
+        image: "/images/piano.png",
+        live: "#",
+        github: "#",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 12,
         title: "A4's Collection Website",
         description: "A custom React Js Website development.",
         category: TABS[2],
@@ -130,6 +169,44 @@ const PORTFOLIO_DATA = [
         downloadLink: "#",
         downloadName: ""
     },
+    {
+        id: 13,
+        title: "ECAP",
+        description: "A full-stack Django web application for Agricultural Products purchase and consultation.",
+        category: TABS[2],
+        tags: ["Python", "Django", "PostgreSQL", "REST API"],
+        image: "/images/ecap.png",
+        github: "#",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 14,
+        title: "Galaxy",
+        description: "A very interesting cross-platform mobile and windows game built with Kivy ..",
+        category: TABS[3],
+        tags: ["Python", "Kivy", "Mobile App", "Cross-Platform"],
+        image: "/images/galaxy.png",
+        live: "#",
+        github: "#",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: "Download APK"
+    },
+    // {
+    //     id: 15,
+    //     title: "TaskFlow Mobile",
+    //     description: "A cross-platform mobile application built with Kivy for productivity tracking and habit management.",
+    //     category: TABS[3],
+    //     tags: ["Python", "Kivy", "Mobile App", "Cross-Platform"],
+    //     image: "/images/taskflow-kivy.png",
+    //     live: "#",
+    //     github: "#",
+    //     hasApk: false,
+    //     downloadLink: "#",
+    //     downloadName: "Download APK"
+    // }
 ];
 
 const Portfolio: React.FC = () => {
