@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
                     </p>
 
                     <div className="space-y-4">
-                        <a href="mailto:hello@brillodigitals.com" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
+                        <a href="mailto:uthmanadesiyan112@gmail.com" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
                             <div className="p-3 rounded-lg bg-brand/10 text-brand group-hover:scale-110 transition-transform">
                                 <Mail className="w-6 h-6" />
                             </div>
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
                             </div>
                         </a>
 
-                        <a href="#" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
+                        <a href="https://www.linkedin.com/in/brillodigitals" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
                             <div className="p-3 rounded-lg bg-brand/10 text-brand group-hover:scale-110 transition-transform">
                                 <Linkedin className="w-6 h-6" />
                             </div>
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                             </div>
                         </a>
 
-                        <a href="#" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
+                        <a href="https://wa.me/2348146269699" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
                             <div className="p-3 rounded-lg bg-brand/10 text-brand group-hover:scale-110 transition-transform">
                                 <MessageCircle className="w-6 h-6" />
                             </div>
