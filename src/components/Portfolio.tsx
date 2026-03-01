@@ -60,7 +60,7 @@ const PORTFOLIO_DATA: Project[] = [
     },
     {
         id: 4,
-        title: "forcastr - Weather Forecast App",
+        title: "Forcastr - Weather Forecast App",
         description: "A cross-platform weather app with real-time forecasts, location detection and a clean Flutter interface.",
         category: TABS[1],
         tags: ["Flutter", "REST API", "Shared Preferences", "Provider"],
