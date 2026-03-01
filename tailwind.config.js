@@ -21,7 +21,7 @@ export default {
         },
         text: {
           DEFAULT: '#FFFFFF',
-          muted: '#E0E0E0',
+          muted: '#C9C9C9',
         }
       },
       fontFamily: {

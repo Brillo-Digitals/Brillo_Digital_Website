@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import heroPortrait from '../assets/hero_portrait.jpeg';
 
 const TITLES = [
     "Flutter App Developer",
@@ -21,91 +22,131 @@ const Hero: React.FC = () => {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 sm:px-12 z-10">
-            <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+            <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12">
 
-                {/* Intro Tag */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand/30 text-brand-light text-sm font-medium tracking-wide"
-                >
-                    <span className="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                    Welcome to my digital space
-                </motion.div>
+                {/* Left: Text Content */}
+                <div className="flex flex-col items-center text-center lg:items-start lg:text-left flex-1">
 
-                {/* Name */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight mb-4 text-text"
-                >
-                    Uthman Adesiyan
-                </motion.h1>
+                    {/* Intro Tag */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand/30 text-brand-light text-sm font-medium tracking-wide"
+                    >
+                        <span className="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                        Welcome to my digital space
+                    </motion.div>
 
-                {/* Subtitle */}
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-xl md:text-2xl text-text-muted font-light mb-8 flex flex-col sm:flex-row items-center gap-2"
-                >
-                    <span>Founder of</span>
-                    <span className="font-semibold text-text">Brillo Digitals</span>
-                </motion.p>
+                    {/* Name */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-text"
+                    >
+                        Uthman Adesiyan
+                    </motion.h1>
 
-                {/* Rotating Titles */}
-                <div className="h-16 md:h-20 mb-10 w-full overflow-hidden relative flex justify-center items-center">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={titleIndex}
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -40 }}
-                            transition={{ duration: 0.5, ease: "easeInOut" }}
-                            className="absolute text-2xl sm:text-4xl md:text-5xl font-bold text-gradient animate-gradient-x"
-                        >
-                            {TITLES[titleIndex]}
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Subtitle */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-xl md:text-2xl text-text-muted font-light mb-8 flex flex-col sm:flex-row items-center lg:items-start gap-2"
+                    >
+                        <span>Founder of</span>
+                        <span className="font-semibold text-text">Brillo Digitals</span>
+                    </motion.p>
+
+                    {/* Rotating Titles */}
+                    <div className="h-16 md:h-14 mb-10 w-full overflow-hidden relative flex justify-center lg:justify-start items-center">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={titleIndex}
+                                initial={{ opacity: 0, y: 40 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -40 }}
+                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                                className="absolute text-2xl sm:text-3xl md:text-4xl font-bold text-gradient animate-gradient-x"
+                            >
+                                {TITLES[titleIndex]}
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        className="flex flex-col sm:flex-row gap-4"
+                    >
+                        <a href="#portfolio" className="group relative px-8 py-4 bg-brand hover:bg-brand-light text-white font-semibold rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(218,175,111,0.4)] hover:shadow-[0_0_30px_rgba(218,175,111,0.6)] flex items-center justify-center gap-2 overflow-hidden">
+                            <span className="relative z-10 flex items-center gap-2">
+                                View Portfolio <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </a>
+                        <a href="#contact" className="px-8 py-4 glass hover:bg-white/5 text-text font-semibold rounded-full transition-all duration-300 border border-white/10 hover:border-brand/50 flex items-center justify-center">
+                            Contact Me
+                        </a>
+                    </motion.div>
+
                 </div>
 
-                {/* CTA Buttons */}
+                {/* Right: Hero Image */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex flex-col sm:flex-row gap-4"
+                    initial={{ opacity: 0, scale: 0.85, x: 40 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    className="flex-shrink-0 relative flex items-center justify-center"
                 >
-                    <a href="#portfolio" className="group relative px-8 py-4 bg-brand hover:bg-brand-light text-white font-semibold rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(218,175,111,0.4)] hover:shadow-[0_0_30px_rgba(218,175,111,0.6)] flex items-center justify-center gap-2 overflow-hidden">
-                        <span className="relative z-10 flex items-center gap-2">
-                            View Portfolio <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                    </a>
-                    <a href="#contact" className="px-8 py-4 glass hover:bg-white/5 text-text font-semibold rounded-full transition-all duration-300 border border-white/10 hover:border-brand/50 flex items-center justify-center">
-                        Contact Me
-                    </a>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1, duration: 1 }}
-                    className="flex lg:mx-4 flex-col items-center"
-                >
-                    <div className="w-[1px] h-12 bg-gradient-to-b from-brand to-transparent"></div>
+                    {/* Outer glow ring */}
+                    <div className="absolute inset-0 rounded-full bg-brand/20 blur-3xl scale-110 animate-pulse" />
+                    {/* Rotating border ring */}
+                    <div
+                        className="absolute inset-[-6px] rounded-full border-2 border-dashed border-brand/40"
+                        style={{ animation: "spin 18s linear infinite" }}
+                    />
+                    {/* Image frame */}
+                    <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-brand/50 shadow-[0_0_40px_rgba(218,175,111,0.3)]">
+                        <img
+                            src={heroPortrait}
+                            alt="Uthman Adesiyan – Brillo Digitals"
+                            className="w-full h-full object-cover object-center"
+                        />
+                        {/* Subtle overlay to blend with the dark theme */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
+                    {/* Floating badge */}
                     <motion.div
-                        animate={{ y: [0, 8, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                        className="mt-2 text-brand-light"
+                        animate={{ y: [0, -8, 0] }}
+                        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                        className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 glass rounded-full border border-brand/30 text-brand-light text-xs font-semibold tracking-widest shadow-lg whitespace-nowrap"
                     >
-                        <ChevronDown className="w-5 h-5" />
+                        ✦ Brillo Digitals ✦
                     </motion.div>
                 </motion.div>
+
             </div>
 
-            {/* Scroll Indicator */}
-
+            {/* Scroll Indicator — pinned to bottom-center of the section */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 1 }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+            >
+                <span className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Scroll</span>
+                <div className="w-[1px] h-10 bg-gradient-to-b from-brand to-transparent" />
+                <motion.div
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                    className="text-brand-light"
+                >
+                    <ChevronDown className="w-4 h-4" />
+                </motion.div>
+            </motion.div>
         </section>
     );
 };
