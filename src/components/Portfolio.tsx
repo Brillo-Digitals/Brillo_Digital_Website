@@ -25,7 +25,7 @@ const PORTFOLIO_DATA = [
         description: "A habit building app built with Flutter, featuring clean architecture and biometric authentication.",
         category: TABS[1],
         tags: ["Flutter", "Dart", "Share Preferences", "SQflite"],
-        image: "/images/rhythm_app.png",
+        image: "/images/rhythm.png",
         github: "https://github.com/Brillo-Digitals/rhythm_habit_building_app",
         hasApk: true,
         downloadLink: "#",
@@ -49,7 +49,7 @@ const PORTFOLIO_DATA = [
         description: "A custom React Js Website development.",
         category: TABS[2],
         tags: ["React", "TypeScript", "TailwindCss", "JavaScript"],
-        image: "/images/brillo_digitals_website.png",
+        image: "/images/brillo_digitals.png",
         live: "/",
         github: "https://github.com/Brillo-Digitals/Brillo_Digital_Website",
         hasApk: false,
@@ -58,16 +58,78 @@ const PORTFOLIO_DATA = [
     },
     {
         id: 4,
-        title: "EcoTrack App",
+        title: "forcastr - Weather Forecast App",
         description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
         category: TABS[1],
-        tags: ["Flutter", "REST API", "StateProvider"],
-        image: "https://images.unsplash.com/photo-1616077168079-7e09a6a38df5?q=80&w=800&auto=format&fit=crop",
+        tags: ["Flutter", "REST API", "Shared Preferences", "Provider"],
+        image: "/images/forcastr.png",
         github: "#",
         hasApk: true,
         downloadLink: "#",
-        downloadName: "SecurePayMobile.apk"
+        downloadName: "forcastr-v1.0.0.apk"
+    },
+    {
+        id: 5,
+        title: "CGPA Calculator ",
+        description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
+        category: TABS[1],
+        tags: ["Flutter", "Dart", "Shared Preferences", "Provider"],
+        image: "/images/cgpa_calculator.png",
+        github: "#",
+        hasApk: true,
+        downloadLink: "#",
+        downloadName: "cgpa-calculator-v1.0.0.apk"
     }
+    ,
+    {
+        id: 6,
+        title: "Warden Game - Simulator",
+        description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
+        category: TABS[1],
+        tags: ["Flutter", "Dart",],
+        image: "/images/warden.png",
+        github: "#",
+        hasApk: true,
+        downloadLink: "#",
+        downloadName: "warden-v1.0.0.apk"
+    },
+    {
+        id: 7,
+        title: "Todo App",
+        description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
+        category: TABS[1],
+        tags: ["Flutter", "Dart", "Hive", "Provider"],
+        image: "/images/to_do_app.png",
+        github: "#",
+        hasApk: true,
+        downloadLink: "#",
+        downloadName: "todo-app-v1.0.0.apk"
+    },
+    {
+        id: 8,
+        title: "Quizzler ",
+        description: "Cross-platform mobile application for tracking carbon footprint and eco-friendly habits.",
+        category: TABS[1],
+        tags: ["Flutter", "Dart", "Provider"],
+        image: "/images/quizler.png",
+        github: "#",
+        hasApk: true,
+        downloadLink: "#",
+        downloadName: "quizzler-v1.0.0.apk"
+    },
+    {
+        id: 9,
+        title: "A4's Collection Website",
+        description: "A custom React Js Website development.",
+        category: TABS[2],
+        tags: ["React", "TypeScript", "TailwindCss", "JavaScript"],
+        image: "/images/a4scollection.png",
+        live: "/",
+        github: "https://github.com/Brillo-Digitals/Brillo_Digital_Website",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
 ];
 
 const Portfolio: React.FC = () => {
@@ -90,7 +152,7 @@ const Portfolio: React.FC = () => {
     };
 
     return (
-        <section id="portfolio" className="py-24 px-6 md:px-12 relative z-10 w-full max-w-7xl mx-auto">
+        <section id="portfolio" className="relative z-10 w-full px-6 py-24 mx-auto md:px-12 max-w-7xl">
             {/* Toast Notification */}
             <AnimatePresence>
                 {toastMessage && (
@@ -113,8 +175,8 @@ const Portfolio: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col items-center mb-12 text-center"
             >
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Work</h2>
-                <div className="w-20 h-1 bg-brand rounded-full mb-8"></div>
+                <h2 className="mb-4 text-3xl font-bold md:text-5xl">Featured Work</h2>
+                <div className="w-20 h-1 mb-8 rounded-full bg-brand"></div>
 
                 {/* Tabs */}
                 <div className="flex flex-wrap justify-center gap-3">
@@ -136,7 +198,7 @@ const Portfolio: React.FC = () => {
             {/* Projects Grid */}
             <motion.div
                 layout
-                className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+                className="grid gap-8 md:grid-cols-2 lg:grid-cols-2"
             >
                 <AnimatePresence mode="popLayout">
                     {filteredProjects.map((project) => (
@@ -147,26 +209,26 @@ const Portfolio: React.FC = () => {
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.4 }}
                             key={project.id}
-                            className="glass-card rounded-2xl overflow-hidden group flex flex-col"
+                            className="flex flex-col overflow-hidden glass-card rounded-2xl group"
                         >
                             {/* Image Container */}
                             <div className="relative h-64 overflow-hidden bg-brand-dark/20">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80"></div>
 
                                 {/* Top Links Overlay */}
-                                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
+                                <div className="absolute flex gap-2 transition-opacity duration-300 translate-y-2 opacity-0 top-4 right-4 group-hover:opacity-100 group-hover:translate-y-0">
                                     {project.github && (
-                                        <a href={project.github} className="p-2 glass rounded-full hover:bg-brand hover:text-white transition-colors">
+                                        <a href={project.github} className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white">
                                             <Github className="w-5 h-5" />
                                         </a>
                                     )}
                                     {project.live && (
-                                        <a href={project.live} className="p-2 glass rounded-full hover:bg-brand hover:text-white transition-colors">
+                                        <a href={project.live} className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white">
                                             <ExternalLink className="w-5 h-5" />
                                         </a>
                                     )}
@@ -174,21 +236,21 @@ const Portfolio: React.FC = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="p-6 flex flex-col flex-1">
-                                <div className="text-brand-light text-xs font-bold uppercase tracking-wider mb-2">
+                            <div className="flex flex-col flex-1 p-6">
+                                <div className="mb-2 text-xs font-bold tracking-wider uppercase text-brand-light">
                                     {project.category}
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-text group-hover:text-brand-light transition-colors">
+                                <h3 className="mb-3 text-2xl font-bold transition-colors text-text group-hover:text-brand-light">
                                     {project.title}
                                 </h3>
-                                <p className="text-text-muted text-sm mb-6 flex-1">
+                                <p className="flex-1 mb-6 text-sm text-text-muted">
                                     {project.description}
                                 </p>
 
                                 {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tags.map(tag => (
-                                        <span key={tag} className="text-xs px-3 py-1 glass rounded-full text-text/80">
+                                        <span key={tag} className="px-3 py-1 text-xs rounded-full glass text-text/80">
                                             {tag}
                                         </span>
                                     ))}
@@ -196,7 +258,7 @@ const Portfolio: React.FC = () => {
 
                                 {/* Mobile Specific App Downloads */}
                                 {project.hasApk && (
-                                    <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-white/5">
+                                    <div className="flex flex-col gap-3 pt-4 mt-auto border-t sm:flex-row border-white/5">
                                         <button
                                             onClick={() => handleDownloadApk(project)}
                                             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-brand to-brand-light text-white font-medium rounded-xl hover:shadow-[0_0_20px_rgba(218,175,111,0.4)] hover:scale-[1.02] transition-all duration-300 animate-pulse"
@@ -205,15 +267,15 @@ const Portfolio: React.FC = () => {
                                             Download APK
                                         </button>
 
-                                        <div className="relative group/tooltip flex-1">
+                                        <div className="relative flex-1 group/tooltip">
                                             <button
                                                 disabled
-                                                className="w-full flex items-center justify-center gap-2 px-4 py-3 glass opacity-60 cursor-not-allowed rounded-xl text-text-muted transition-all"
+                                                className="flex items-center justify-center w-full gap-2 px-4 py-3 transition-all cursor-not-allowed glass opacity-60 rounded-xl text-text-muted"
                                             >
                                                 <Apple className="w-5 h-5" />
                                                 iOS - Coming Soon
                                             </button>
-                                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-background text-xs rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity whitespace-nowrap border border-white/10 pointer-events-none">
+                                            <div className="absolute px-3 py-1 mb-2 text-xs transition-opacity -translate-x-1/2 border rounded opacity-0 pointer-events-none bottom-full left-1/2 bg-background group-hover/tooltip:opacity-100 whitespace-nowrap border-white/10">
                                                 iOS version currently in development
                                             </div>
                                         </div>
