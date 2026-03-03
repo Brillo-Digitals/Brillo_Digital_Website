@@ -29,7 +29,7 @@ const About: React.FC = () => {
                     className="space-y-6 text-lg leading-relaxed text-text-muted"
                 >
                     <p>
-                        I'm a <strong className="font-medium text-text">Cybersecurity student</strong> at the Federal University of Technology, Akure, with an expected graduation in 2027. My tech journey began in 2020, driven by a passion for creating secure, scalable, and impactful digital experiences.
+                        I'm a <strong className="font-medium text-text">Cybersecurity student</strong> at the Federal University of Technology, Akure, with an expected graduation in 2028. My tech journey began in 2020, driven by a passion for creating secure, scalable, and impactful digital experiences.
                     </p>
                     <p>
                         With a unique blend of development expertise and a security-first mindset, I build applications that are not only visually stunning and highly performant but also robust and secure from the ground up.

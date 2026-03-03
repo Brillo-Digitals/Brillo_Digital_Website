@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                     <a href="https://github.com/Brillo-Digitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Github">
                         <Github className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
-                    <a href="#" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/brillodigitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="LinkedIn">
                         <Linkedin className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
                     <a href="https://x.com/brillodigitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Twitter / X">
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                     <a href="https://wa.me/2348146269699" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="WhatsApp">
                         <SiWhatsapp className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
-                    <a href="mailto:hello@brillodigitals.com" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Email">
+                    <a href="mailto:uthmanadesiyan112@gmail.com" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Email">
                         <Mail className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
                 </div>
