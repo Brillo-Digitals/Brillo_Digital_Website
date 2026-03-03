@@ -30,7 +30,7 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/rhythm.png",
         github: "https://github.com/Brillo-Digitals/rhythm_habit_building_app",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/rhythm-v-1-0-0.apk",
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.1/rhythm-v1-0-1.apk",
         downloadName: "Rhythm-v1-0-0.apk"
     },
     {
@@ -89,10 +89,10 @@ const PORTFOLIO_DATA: Project[] = [
         category: TABS[1],
         tags: ["Flutter", "Dart"],
         image: "/images/warden.png",
-        github: "https://github.com/Brillo-Digitals/Warden_Cryo_Game",
+        github: "https://github.com/Brillo-Digitals/warden.git",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/warden-v-1-0-0.apk",
-        downloadName: "warden-v1-0-0.apk"
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.1/warden-v1-0-1.apk",
+        downloadName: "warden-v1-0-1.apk"
     },
     {
         id: 7,
@@ -306,7 +306,7 @@ const Portfolio: React.FC = () => {
                             exit="exit"
                             whileHover={{ y: -8, transition: { duration: 0.22, ease: "easeOut" } }}
                             key={project.id}
-                            className="flex flex-col overflow-hidden glass-card rounded-2xl group cursor-default"
+                            className="flex flex-col overflow-hidden cursor-default glass-card rounded-2xl group"
                         >
                             {/* Image */}
                             <div className="relative h-56 overflow-hidden bg-brand-dark/20">
@@ -349,7 +349,7 @@ const Portfolio: React.FC = () => {
 
                             {/* Content */}
                             <div className="flex flex-col flex-1 p-6">
-                                <h3 className="mb-2 text-xl font-bold leading-snug text-text group-hover:text-brand-light transition-colors duration-300">
+                                <h3 className="mb-2 text-xl font-bold leading-snug transition-colors duration-300 text-text group-hover:text-brand-light">
                                     {project.title}
                                 </h3>
                                 <p className="flex-1 mb-5 text-sm leading-relaxed text-text/75">
@@ -361,7 +361,7 @@ const Portfolio: React.FC = () => {
                                     {project.tags.map(tag => (
                                         <span
                                             key={tag}
-                                            className="px-3 py-1 text-xs font-medium rounded-full glass text-text/80 border border-white/10"
+                                            className="px-3 py-1 text-xs font-medium border rounded-full glass text-text/80 border-white/10"
                                         >
                                             {tag}
                                         </span>
@@ -381,7 +381,7 @@ const Portfolio: React.FC = () => {
                                         <div className="relative flex-1 group/tooltip">
                                             <button
                                                 disabled
-                                                className="flex items-center justify-center w-full gap-2 px-4 py-3 transition-all cursor-not-allowed glass opacity-50 rounded-xl text-text/60 text-sm"
+                                                className="flex items-center justify-center w-full gap-2 px-4 py-3 text-sm transition-all opacity-50 cursor-not-allowed glass rounded-xl text-text/60"
                                             >
                                                 <Apple className="w-4 h-4" />
                                                 iOS — Soon
