@@ -67,7 +67,7 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/forcastr.png",
         github: "#",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/forcastr-v1-0-0.apk",
+        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.1/forcastr-v1-0-1.apk",
         downloadName: "forcastr-v1-0-0.apk"
     },
     {
