@@ -189,8 +189,19 @@ const PORTFOLIO_DATA: Project[] = [
         category: TABS[3],
         tags: ["Python", "Kivy", "Mobile App", "Cross-Platform"],
         image: "/images/galaxy.png",
-        live: "#",
-        github: "#",
+        github: "https://github.com/Brillo-Digitals/galaxy",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 15,
+        title: "Tetris",
+        description: "A Multiplayer Tetris game clone with smooth controls, line clearing, and increasing difficulty levels, built using Pygame.",
+        category: TABS[3],
+        tags: ["Python", "Pygame", "Multiplayer", "Sound Engine", "Interactive App", "Game Pad Support"],
+        image: "/images/tetris.png",
+        github: "https://github.com/Brillo-Digitals/tetris",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
