@@ -30,8 +30,8 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/rhythm.png",
         github: "https://github.com/Brillo-Digitals/rhythm_habit_building_app",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.1/rhythm-v1-0-1.apk",
-        downloadName: "Rhythm-v1-0-0.apk"
+        downloadLink: "/apps/rhythm-v1-0-1.apk",
+        downloadName: "Rhythm-v1-0-1.apk"
     },
     {
         id: 2,
@@ -67,8 +67,8 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/forcastr.png",
         github: "#",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.1/forcastr-v1-0-1.apk",
-        downloadName: "forcastr-v1-0-0.apk"
+        downloadLink: "/apps/forcastr-v1-0-1.apk",
+        downloadName: "forcastr-v1-0-1.apk"
     },
     {
         id: 5,
@@ -79,7 +79,7 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/cgpa_calculator.png",
         github: "https://github.com/Brillo-Digitals/cgpa_calculator",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/cgpa-calculator-v-1-0-0.apk",
+        downloadLink: "/apps/cgpa-calculator-v1-0-0.apk",
         downloadName: "cgpa-calculator-v1-0-0.apk"
     },
     {
@@ -91,7 +91,7 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/warden.png",
         github: "https://github.com/Brillo-Digitals/warden.git",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.1/warden-v1-0-1.apk",
+        downloadLink: "/apps/warden-v1-0-1.apk",
         downloadName: "warden-v1-0-1.apk"
     },
     {
@@ -116,7 +116,7 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/to_do_app.png",
         github: "https://github.com/Brillo-Digitals/to_to_app",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/to-do-v-1-0-0.apk",
+        downloadLink: "/apps/todo-app-v1-0-0.apk",
         downloadName: "todo-app-v1-0-0.apk"
     },
     {
@@ -141,7 +141,7 @@ const PORTFOLIO_DATA: Project[] = [
         image: "/images/quizler.png",
         github: "https://github.com/Brillo-Digitals/my_apps/releases/download/v1.0.0/quizzler-v-1-0-0.apk",
         hasApk: true,
-        downloadLink: "https://github.com/Brillo-Digitals/Quizzler-Brain-Tester",
+        downloadLink: "/apps/quizzler-v1-0-0.apk",
         downloadName: "quizzler-v1-0-0.apk"
     },
     {
