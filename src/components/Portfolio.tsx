@@ -206,6 +206,17 @@ const PORTFOLIO_DATA: Project[] = [
         downloadLink: "#",
         downloadName: ""
     },
+    {
+        id: 100,
+        title: "Shopify Sales",
+        description: "A comprehensive Shopify store optimization project that boosted sales by 30% through SEO, Klaviyo email campaigns, and targeted social media marketing.",
+        category: TABS[4],
+        tags: ["Shopify Sales", "Klaviyo", "SEO", "Social Media Marketing", "Google Analytics", "Marketing"],
+        image: "/images/shopify/1701768264266 (1).png",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
 ];
 
 const cardVariants = {
