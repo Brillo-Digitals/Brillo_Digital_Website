@@ -234,7 +234,7 @@ const PORTFOLIO_DATA: Project[] = [
     description: "A Shopify store optimization project that improved conversion rates by 45% using CRO strategies, improved product pages, and automated Klaviyo email flows.",
     category: TABS[4],
     tags: ["Shopify", "CRO", "Klaviyo", "Email Marketing", "UX Optimization", "Marketing"],
-    image: "/images/shopify/shopify-project-1.jpg",
+    image: "/images/shopify/1701768254695.png",
     hasApk: false,
     downloadLink: "#",
     downloadName: ""
@@ -245,7 +245,7 @@ const PORTFOLIO_DATA: Project[] = [
         description: "A fashion Shopify store growth campaign that increased monthly revenue by 60% using Facebook ads, SEO optimization, and customer retention strategies.",
         category: TABS[4],
         tags: ["Shopify", "Facebook Ads", "SEO", "Ecommerce", "Conversion Optimization", "Marketing"],
-        image: "/images/shopify/shopify-project-2.jpg",
+        image: "/images/shopify/1701768310437.png",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
@@ -256,7 +256,7 @@ const PORTFOLIO_DATA: Project[] = [
         description: "Developed a complete Klaviyo email automation system including abandoned cart, welcome flow, and post purchase campaigns that generated consistent repeat sales.",
         category: TABS[4],
         tags: ["Shopify", "Klaviyo", "Email Automation", "Ecommerce Marketing", "Retention"],
-        image: "/images/shopify/shopify-project-3.jpg",
+        image: "/images/shopify/1701768350423.png",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
@@ -267,7 +267,7 @@ const PORTFOLIO_DATA: Project[] = [
         description: "An SEO optimization project that helped a Shopify store rank on the first page of Google for multiple product keywords, increasing organic traffic by 120%.",
         category: TABS[4],
         tags: ["Shopify", "SEO", "Google Search", "Organic Traffic", "Ecommerce"],
-        image: "/images/shopify/shopify-project-4.jpg",
+        image: "/images/shopify/1701768372762.png",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
@@ -278,7 +278,7 @@ const PORTFOLIO_DATA: Project[] = [
         description: "Managed a Shopify product launch campaign using influencer marketing, email campaigns, and social media promotions that generated strong launch day sales.",
         category: TABS[4],
         tags: ["Shopify", "Product Launch", "Influencer Marketing", "Social Media", "Email Marketing"],
-        image: "/images/shopify/shopify-project-5.jpg",
+        image: "/images/shopify/1701768375489.png",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
@@ -289,7 +289,7 @@ const PORTFOLIO_DATA: Project[] = [
         description: "Implemented a retargeting ads strategy using Facebook and Instagram ads to recover abandoned carts and increase repeat purchases.",
         category: TABS[4],
         tags: ["Shopify", "Facebook Ads", "Instagram Ads", "Retargeting", "Ecommerce Marketing"],
-        image: "/images/shopify/shopify-project-6.jpg",
+        image: "/images/shopify/1701768414478.png",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
@@ -300,7 +300,7 @@ const PORTFOLIO_DATA: Project[] = [
         description: "Configured Google Analytics and advanced tracking for a Shopify store to monitor customer behavior, sales funnels, and marketing performance.",
         category: TABS[4],
         tags: ["Shopify", "Google Analytics", "Data Tracking", "Marketing Insights", "Ecommerce"],
-        image: "/images/shopify/shopify-project-7.jpg",
+        image: "/images/shopify/1701768439580.png",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
