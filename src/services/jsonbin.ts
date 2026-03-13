@@ -43,10 +43,17 @@ export const updateEngagementData = async (data: EngagementData): Promise<void> 
     }
 };
 
-export const generateRandomInitialData = (): ProjectEngagement => {
-    // Random number between 20 and 43 inclusive
+export const generateRandomInitialData = (projectId: number): ProjectEngagement => {
+    // Simple deterministic random generator based on the project ID
+    // This ensures that the same project ID always gets the same "starting" numbers
+    // if persistence fails.
+    const seed = (projectId * 1234567) % 7654321;
+    const likes = (seed % 24) + 20; // 20-43
+    const useful = ((seed * 11) % 24) + 20; // 20-43
+    
     return {
-        likes: Math.floor(Math.random() * (43 - 20 + 1)) + 20,
-        useful: Math.floor(Math.random() * (43 - 20 + 1)) + 20,
+        likes,
+        useful,
     };
 };
+

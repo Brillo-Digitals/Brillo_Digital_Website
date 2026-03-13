@@ -33,8 +33,9 @@ export const useEngagement = (projectIds: number[]) => {
             }
 
             for (const id of projectIds) {
-                if (!newData.projects[id]) {
-                    newData.projects[id] = generateRandomInitialData();
+                const idStr = String(id);
+                if (!newData.projects[idStr]) {
+                    newData.projects[idStr] = generateRandomInitialData(id);
                     needsUpdate = true;
                 }
             }
@@ -44,7 +45,11 @@ export const useEngagement = (projectIds: number[]) => {
 
             if (needsUpdate) {
                 // Update JSONBin with the newly initialized random data
-                await updateEngagementData(newData);
+                try {
+                    await updateEngagementData(newData);
+                } catch (error) {
+                    console.error('Failed to persist initial engagement data:', error);
+                }
             }
         };
 
@@ -68,7 +73,8 @@ export const useEngagement = (projectIds: number[]) => {
         
         setUserLikes(prev => ({ ...prev, [projectId]: newLikeState }));
 
-        const currentProjectStats = data.projects[projectId] || { likes: 0, useful: 0 };
+        const idStr = String(projectId);
+        const currentProjectStats = data.projects[idStr] || { likes: 0, useful: 0 };
         const updatedStats = {
             ...currentProjectStats,
             likes: newLikeState ? currentProjectStats.likes + 1 : Math.max(0, currentProjectStats.likes - 1)
@@ -78,7 +84,7 @@ export const useEngagement = (projectIds: number[]) => {
             ...data,
             projects: {
                 ...data.projects,
-                [projectId]: updatedStats
+                [idStr]: updatedStats
             }
         };
         
@@ -95,7 +101,8 @@ export const useEngagement = (projectIds: number[]) => {
 
         setUserUseful(prev => ({ ...prev, [projectId]: newUsefulState }));
 
-        const currentProjectStats = data.projects[projectId] || { likes: 0, useful: 0 };
+        const idStr = String(projectId);
+        const currentProjectStats = data.projects[idStr] || { likes: 0, useful: 0 };
         const updatedStats = {
             ...currentProjectStats,
             useful: newUsefulState ? currentProjectStats.useful + 1 : Math.max(0, currentProjectStats.useful - 1)
@@ -105,7 +112,7 @@ export const useEngagement = (projectIds: number[]) => {
             ...data,
             projects: {
                 ...data.projects,
-                [projectId]: updatedStats
+                [idStr]: updatedStats
             }
         };
 
