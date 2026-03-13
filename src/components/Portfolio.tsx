@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Download, Apple, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, ExternalLink, Download, Apple, CheckCircle, ThumbsUp, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useEngagement } from '../hooks/useEngagement';
 
-const TABS = ["All", "Mobile Apps", "Web Applications", "Other Applications ", "Web Design and Marketing"];
+export const TABS = ["All", "Mobile Apps", "Web Applications", "Other Applications ", "Web Design and Marketing"];
 
-const INITIAL_VISIBLE = 8;
+const INITIAL_VISIBLE = 13;
 
-interface Project {
+export interface Project {
     id: number;
     title: string;
     description: string;
@@ -20,7 +22,7 @@ interface Project {
     downloadName: string;
 }
 
-const PORTFOLIO_DATA: Project[] = [
+export const PORTFOLIO_DATA: Project[] = [
     {
         id: 1,
         title: "Rhythm - Habit Builder App",
@@ -329,23 +331,24 @@ const cardVariants = {
 
 const Portfolio: React.FC = () => {
     const [activeTab, setActiveTab] = useState("All");
-    const [showAll, setShowAll] = useState(false);
     const [toastMessage, setToastMessage] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     const filteredProjects = activeTab === "All"
         ? PORTFOLIO_DATA
         : PORTFOLIO_DATA.filter(p => p.category === activeTab);
 
-    const isAllTab = activeTab === "All";
-    const visibleProjects = isAllTab && !showAll
-        ? filteredProjects.slice(0, INITIAL_VISIBLE)
-        : filteredProjects;
+    // With the new logic we ONLY show INITIAL_VISIBLE limit on the homepage
+    const visibleProjects = filteredProjects.slice(0, INITIAL_VISIBLE);
 
-    const hasMore = isAllTab && filteredProjects.length > INITIAL_VISIBLE;
+    const hasMore = filteredProjects.length > INITIAL_VISIBLE;
+
+    const { data: engagementData, userLikes, userUseful, toggleLike, toggleUseful } = useEngagement(
+        visibleProjects.map(p => p.id)
+    );
 
     const handleTabChange = (tab: string) => {
         setActiveTab(tab);
-        setShowAll(false);
     };
 
     const handleDownloadApk = (thisProject: Project) => {
@@ -478,6 +481,32 @@ const Portfolio: React.FC = () => {
                                     ))}
                                 </div>
 
+                                {/* Engagement: Like & Useful */}
+                                <div className="flex items-center gap-4 py-3 mt-auto border-t border-white/10">
+                                    <button
+                                        onClick={() => toggleLike(project.id)}
+                                        className={`flex items-center gap-1.5 transition-colors ${
+                                            userLikes[project.id] ? 'text-brand' : 'text-text/60 hover:text-text'
+                                        }`}
+                                    >
+                                        <ThumbsUp className={`w-4 h-4 ${userLikes[project.id] ? 'fill-current' : ''}`} />
+                                        <span className="text-sm font-medium">
+                                            {engagementData.projects?.[project.id]?.likes || 0}
+                                        </span>
+                                    </button>
+                                    <button
+                                        onClick={() => toggleUseful(project.id)}
+                                        className={`flex items-center gap-1.5 transition-colors ${
+                                            userUseful[project.id] ? 'text-brand-light' : 'text-text/60 hover:text-text'
+                                        }`}
+                                    >
+                                        <Zap className={`w-4 h-4 ${userUseful[project.id] ? 'fill-current' : ''}`} />
+                                        <span className="text-sm font-medium">
+                                            {engagementData.projects?.[project.id]?.useful || 0}
+                                        </span>
+                                    </button>
+                                </div>
+
                                 {/* APK Downloads */}
                                 {project.hasApk && (
                                     <div className="flex flex-col gap-3 pt-4 mt-auto border-t sm:flex-row border-white/10">
@@ -517,20 +546,11 @@ const Portfolio: React.FC = () => {
                     className="flex justify-center mt-14"
                 >
                     <button
-                        onClick={() => setShowAll(prev => !prev)}
+                        onClick={() => navigate(`/portfolio/${encodeURIComponent(activeTab)}`)}
                         className="group flex items-center gap-3 px-8 py-4 rounded-full glass border border-brand/30 text-text font-semibold hover:border-brand/70 hover:bg-brand/10 hover:text-brand-light transition-all duration-300 shadow-[0_0_10px_rgba(218,175,111,0.08)] hover:shadow-[0_0_24px_rgba(218,175,111,0.22)]"
                     >
-                        {showAll ? (
-                            <>
-                                <ChevronUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
-                                Show Less
-                            </>
-                        ) : (
-                            <>
-                                View All {filteredProjects.length} Projects
-                                <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-                            </>
-                        )}
+                        View All {filteredProjects.length} Projects
+                        <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                     </button>
                 </motion.div>
             )}
