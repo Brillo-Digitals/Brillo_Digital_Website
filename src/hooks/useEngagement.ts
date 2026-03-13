@@ -92,7 +92,14 @@ export const useEngagement = (projectIds: number[]) => {
         setData(newData);
         
         // Update server
-        await updateEngagementData(newData);
+        try {
+            await updateEngagementData(newData);
+        } catch (error) {
+            console.error('Failed to update likes on server:', error);
+            // Rollback on failure
+            setUserLikes(prev => ({ ...prev, [projectId]: hasLiked }));
+            setData(data); // Revert to previous data
+        }
     };
 
     const toggleUseful = async (projectId: number) => {
@@ -120,7 +127,14 @@ export const useEngagement = (projectIds: number[]) => {
         setData(newData);
         
         // Update server
-        await updateEngagementData(newData);
+        try {
+            await updateEngagementData(newData);
+        } catch (error) {
+            console.error('Failed to update useful mark on server:', error);
+            // Rollback on failure
+            setUserUseful(prev => ({ ...prev, [projectId]: hasMarkedUseful }));
+            setData(data); // Revert to previous data
+        }
     };
 
     return {

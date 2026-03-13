@@ -392,16 +392,31 @@ const Portfolio: React.FC = () => {
                 {/* Tabs */}
                 <div className="flex flex-wrap justify-center gap-3">
                     {TABS.map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => handleTabChange(tab)}
-                            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === tab
-                                ? 'bg-brand text-white shadow-[0_0_15px_rgba(218,175,111,0.5)]'
-                                : 'glass text-text/70 hover:text-text hover:bg-white/5 border border-white/5'
-                                }`}
-                        >
-                            {tab}
-                        </button>
+                        <div key={tab} className="relative group/tab">
+                            <button
+                                onClick={() => handleTabChange(tab)}
+                                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === tab
+                                    ? 'bg-brand text-white shadow-[0_0_15px_rgba(218,175,111,0.5)]'
+                                    : 'glass text-text/70 hover:text-text hover:bg-white/5 border border-white/5'
+                                    }`}
+                            >
+                                {tab}
+                                {activeTab === tab && tab !== "All" && (
+                                    <motion.span
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            navigate(`/portfolio/${encodeURIComponent(tab)}`);
+                                        }}
+                                        className="p-1 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
+                                        title={`Go to ${tab} page`}
+                                    >
+                                        <ExternalLink className="w-3 h-3" />
+                                    </motion.span>
+                                )}
+                            </button>
+                        </div>
                     ))}
                 </div>
             </motion.div>
@@ -431,9 +446,15 @@ const Portfolio: React.FC = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90" />
 
                                 {/* Category badge */}
-                                <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand/80 text-white backdrop-blur-sm shadow">
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        navigate(`/portfolio/${encodeURIComponent(project.category)}`);
+                                    }}
+                                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand/80 text-white backdrop-blur-sm shadow hover:bg-brand transition-colors z-10"
+                                >
                                     {project.category}
-                                </div>
+                                </button>
 
                                 {/* Link icons */}
                                 <div className="absolute flex gap-2 transition-all duration-300 translate-y-2 opacity-0 top-3 right-3 group-hover:opacity-100 group-hover:translate-y-0">

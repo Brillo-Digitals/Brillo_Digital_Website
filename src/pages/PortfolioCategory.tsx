@@ -136,6 +136,12 @@ const PortfolioCategory: React.FC = () => {
                                         {tag}
                                     </span>
                                 ))}
+                                <button 
+                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase bg-brand/20 text-brand-light border border-brand/30 rounded-full hover:bg-brand/30 transition-colors"
+                                >
+                                    {project.category}
+                                </button>
                             </div>
 
                             {/* Engagement: Like & Useful */}
