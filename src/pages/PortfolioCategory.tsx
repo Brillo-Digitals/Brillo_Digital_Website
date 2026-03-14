@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink, Download, Apple, CheckCircle, ArrowLeft, ThumbsUp, Zap } from 'lucide-react';
-import { PORTFOLIO_DATA } from '../components/Portfolio';
-import type { Project } from '../components/Portfolio';
+import { PORTFOLIO_DATA, type Project } from '../data/portfolio';
 import { useEngagement } from '../hooks/useEngagement';
 
 const PortfolioCategory: React.FC = () => {
