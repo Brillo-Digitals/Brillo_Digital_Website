@@ -137,7 +137,7 @@ const Hero: React.FC = () => {
                 transition={{ delay: 1.2, duration: 1 }}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
             >
-                <span className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1">Scroll</span>
+                <span className="text-text-muted text-[10px] tracking-[0.2em] uppercase mb-1"></span>
                 <div className="w-[1px] h-10 bg-gradient-to-b from-brand to-transparent" />
                 <motion.div
                     animate={{ y: [0, 6, 0] }}

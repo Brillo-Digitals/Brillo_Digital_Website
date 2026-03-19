@@ -223,15 +223,15 @@ export const PORTFOLIO_DATA: Project[] = [
         downloadName: ""
     },
     {
-    id: 102,
-    title: "Shopify Conversion Boost",
-    description: "A Shopify store optimization project that improved conversion rates by 45% using CRO strategies, improved product pages, and automated Klaviyo email flows.",
-    category: TABS[4],
-    tags: ["Shopify", "CRO", "Klaviyo", "Email Marketing", "UX Optimization", "Marketing"],
-    image: "/images/shopify/1701768254695.png",
-    hasApk: false,
-    downloadLink: "#",
-    downloadName: ""
+        id: 102,
+        title: "Shopify Conversion Boost",
+        description: "A Shopify store optimization project that improved conversion rates by 45% using CRO strategies, improved product pages, and automated Klaviyo email flows.",
+        category: TABS[4],
+        tags: ["Shopify", "CRO", "Klaviyo", "Email Marketing", "UX Optimization", "Marketing"],
+        image: "/images/shopify/1701768254695.png",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
     },
     {
         id: 103,
@@ -299,4 +299,88 @@ export const PORTFOLIO_DATA: Project[] = [
         downloadLink: "#",
         downloadName: ""
     },
+    {
+        id: 9,
+        title: "The Little Boathouse",
+        description: "A clean and elegant Shopify store designed for a lifestyle and home décor brand, focused on storytelling and smooth shopping experience.",
+        category: TABS[4],
+        tags: ["Wix", "Custom Design", "Responsive Design", "SEO"],
+        image: "/images/thelittleboathouse.jpg",
+        live: "https://www.thelittleboathouse.com/",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 20,
+        title: "Britestone",
+        description: "A modern and structured website for a construction and stone supply company, optimized for showcasing products and generating leads.",
+        category: TABS[4],
+        tags: ["WordPress", "Elementor", "CSS", "SEO"],
+        image: "/images/britestone.png",
+        live: "https://www.britestone.ca/",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 21,
+        title: "The Pote Studio",
+        description: "A minimal and artistic e-commerce experience built for a creative studio, highlighting craftsmanship and visual storytelling.",
+        category: TABS[4],
+        tags: ["Wix", "Custom Design", "Responsive Design", "SEO"],
+        image: "/images/thepotestudio.png",
+        live: "https://thepotestudio.com/",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 22,
+        title: "Vivan MN",
+        description: "A sleek fashion-focused online store built to deliver a premium shopping experience with clean layouts and strong branding.",
+        category: TABS[4],
+        tags: ["Shopify", "Liquid", "CSS3", "JavaScript"],
+        image: "/images/vivanmn.png",
+        live: "https://vivanmn.com",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 23,
+        title: "Oak Sleep",
+        description: "A high-converting e-commerce store for a sleep and wellness brand, designed with trust-building elements and optimized product pages.",
+        category: TABS[4],
+        tags: ["Shopify", "Klaviyo", "JavaScript", "Conversion Optimization"],
+        image: "/images/oaksleep.png",
+        live: "https://www.oaksleep.com.au",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 24,
+        title: "EarthChimp",
+        description: "A vibrant and conversion-focused Shopify store for a sustainable nutrition brand, combining bold design with persuasive product storytelling.",
+        category: TABS[4],
+        tags: ["Shopify Plus", "Klaviyo", "ReCharge", "JavaScript"],
+        image: "/images/earthchimp.png",
+        live: "https://earthchimp.com",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 25,
+        title: "Emotoworx",
+        description: "A performance-driven e-commerce platform for automotive products, designed for speed, clarity, and efficient product discovery.",
+        category: TABS[4],
+        tags: ["Shopify", "AJAX", "Liquid", "Performance Optimization"],
+        image: "/images/emotoworx.png",
+        live: "https://emotoworx.com",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    }
 ];
