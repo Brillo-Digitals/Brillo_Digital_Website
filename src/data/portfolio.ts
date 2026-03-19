@@ -305,7 +305,7 @@ export const PORTFOLIO_DATA: Project[] = [
         description: "A clean and elegant Shopify store designed for a lifestyle and home décor brand, focused on storytelling and smooth shopping experience.",
         category: TABS[4],
         tags: ["Wix", "Custom Design", "Responsive Design", "SEO"],
-        image: "/images/thelittleboathouse.jpg",
+        image: "/images/thelittleboathouse.png",
         live: "https://www.thelittleboathouse.com/",
         hasApk: false,
         downloadLink: "#",
