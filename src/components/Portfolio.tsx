@@ -4,7 +4,7 @@ import { Github, ExternalLink, Download, Apple, CheckCircle, ThumbsUp, Zap } fro
 import { useNavigate } from 'react-router-dom';
 import { useEngagement } from '../hooks/useEngagement';
 
-import { TABS, type Project, PORTFOLIO_DATA } from '../data/portfolio';
+import { TABS, type Project, PORTFOLIO_DATA, toSlug } from '../data/portfolio';
 
 const INITIAL_VISIBLE = 13;
 
@@ -106,7 +106,7 @@ const Portfolio: React.FC = () => {
                                         animate={{ opacity: 1, scale: 1 }}
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            navigate(`/portfolio/${encodeURIComponent(tab)}`);
+                                            navigate(`/portfolio/${toSlug(tab)}`);
                                         }}
                                         className="p-1 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
                                         title={`Go to ${tab} page`}
@@ -148,7 +148,7 @@ const Portfolio: React.FC = () => {
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        navigate(`/portfolio/${encodeURIComponent(project.category)}`);
+                                        navigate(`/portfolio/${toSlug(project.category)}`);
                                     }}
                                     className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand/80 text-white backdrop-blur-sm shadow hover:bg-brand transition-colors z-10"
                                 >
@@ -266,7 +266,7 @@ const Portfolio: React.FC = () => {
                     className="flex justify-center mt-14"
                 >
                     <button
-                        onClick={() => navigate(`/portfolio/${encodeURIComponent(activeTab)}`)}
+                        onClick={() => navigate(`/portfolio/${toSlug(activeTab)}`)}
                         className="group flex items-center gap-3 px-8 py-4 rounded-full glass border border-brand/30 text-text font-semibold hover:border-brand/70 hover:bg-brand/10 hover:text-brand-light transition-all duration-300 shadow-[0_0_10px_rgba(218,175,111,0.08)] hover:shadow-[0_0_24px_rgba(218,175,111,0.22)]"
                     >
                         View All {filteredProjects.length} Projects

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink, Download, Apple, CheckCircle, ArrowLeft, ThumbsUp, Zap } from 'lucide-react';
-import { PORTFOLIO_DATA, type Project } from '../data/portfolio';
+import { PORTFOLIO_DATA, type Project, TABS, toSlug } from '../data/portfolio';
 import { useEngagement } from '../hooks/useEngagement';
 
 const PortfolioCategory: React.FC = () => {
@@ -10,12 +10,12 @@ const PortfolioCategory: React.FC = () => {
     const navigate = useNavigate();
     const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-    // If category is not valid or doesn't exist, we fallback
-    const decodedCategory = category ? decodeURIComponent(category) : "All";
+    const slugToCategory = Object.fromEntries(TABS.map(t => [toSlug(t), t]));
+    const actualCategory = category ? (slugToCategory[category] || "All") : "All";
 
-    const filteredProjects = decodedCategory === "All"
+    const filteredProjects = actualCategory === "All"
         ? PORTFOLIO_DATA
-        : PORTFOLIO_DATA.filter(p => p.category === decodedCategory);
+        : PORTFOLIO_DATA.filter(p => p.category === actualCategory);
 
     const { data: engagementData, userLikes, userUseful, toggleLike, toggleUseful } = useEngagement(
         filteredProjects.map(p => p.id)
@@ -68,7 +68,7 @@ const PortfolioCategory: React.FC = () => {
                         Back to Home
                     </button>
                     <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-text to-text/60 bg-clip-text text-transparent">
-                        {decodedCategory} Projects
+                        {actualCategory} Projects
                     </h1>
                 </div>
                 <div className="w-20 h-1 rounded-full bg-brand"></div>

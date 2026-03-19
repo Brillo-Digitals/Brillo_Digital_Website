@@ -27,6 +27,14 @@ export const useEngagement = (projectIds: number[]) => {
             let needsUpdate = false;
             
             // Check if any visible projects are missing data
+            // If server returned empty/failed, try to load from localStorage
+            if (Object.keys(currentData.projects || {}).length === 0) {
+                try {
+                    const localLocal = localStorage.getItem('brillo_engagement_data');
+                    if (localLocal) currentData = JSON.parse(localLocal);
+                } catch (e) {}
+            }
+
             const newData = { ...currentData };
             if (!newData.projects) {
                 newData.projects = {};
@@ -90,15 +98,14 @@ export const useEngagement = (projectIds: number[]) => {
         
         // Optimistic update
         setData(newData);
+        localStorage.setItem('brillo_engagement_data', JSON.stringify(newData));
         
         // Update server
         try {
             await updateEngagementData(newData);
         } catch (error) {
-            console.error('Failed to update likes on server:', error);
-            // Rollback on failure
-            setUserLikes(prev => ({ ...prev, [projectId]: hasLiked }));
-            setData(data); // Revert to previous data
+            console.warn('Failed to update likes on server, persisting locally:', error);
+            // DO NOT rollback, keep the optimistic update so it persists on reload
         }
     };
 
@@ -125,15 +132,14 @@ export const useEngagement = (projectIds: number[]) => {
 
         // Optimistic update
         setData(newData);
+        localStorage.setItem('brillo_engagement_data', JSON.stringify(newData));
         
         // Update server
         try {
             await updateEngagementData(newData);
         } catch (error) {
-            console.error('Failed to update useful mark on server:', error);
-            // Rollback on failure
-            setUserUseful(prev => ({ ...prev, [projectId]: hasMarkedUseful }));
-            setData(data); // Revert to previous data
+            console.warn('Failed to update useful mark on server, persisting locally:', error);
+            // DO NOT rollback, keep the optimistic update so it persists on reload
         }
     };
 

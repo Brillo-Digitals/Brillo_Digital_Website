@@ -1,3 +1,5 @@
+export const toSlug = (text: string) => text.replace(/\s+/g, '');
+
 export const TABS = ["All", "Mobile Apps", "Web Applications", "Other Applications ", "Web Design and Marketing"];
 
 export interface Project {
