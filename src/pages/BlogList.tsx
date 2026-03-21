@@ -53,8 +53,9 @@ const BlogList: React.FC = () => {
                             hidden: { opacity: 0, y: 30 },
                             visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                         }}
-                        className="glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-brand/40 transition-all duration-300 h-full"
+                        className="h-full"
                     >
+                        <Link to={`/blog/${blog.id}`} className="block glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-brand/40 transition-all duration-300 h-full">
                         <div className="relative h-56 overflow-hidden">
                             <div className="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors z-10 mix-blend-overlay"></div>
                             <img 
@@ -84,6 +85,7 @@ const BlogList: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     </motion.div>
                 ))}
             </motion.div>

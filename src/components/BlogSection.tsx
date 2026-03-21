@@ -5,7 +5,7 @@ import { Clock, Calendar, ArrowRight } from 'lucide-react';
 import { blogs, type BlogPost } from '../data/blog';
 
 const BlogCard: React.FC<{ blog: BlogPost }> = ({ blog }) => (
-    <div className="flex-shrink-0 w-[320px] sm:w-[380px] h-[480px] glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-brand/50 transition-all duration-300">
+    <Link to={`/blog/${blog.id}`} className="block flex-shrink-0 w-[320px] sm:w-[380px] h-[480px] glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-brand/50 transition-all duration-300">
         <div className="relative h-48 overflow-hidden">
             <div className="absolute inset-0 bg-brand/20 group-hover:bg-transparent transition-colors z-10 mix-blend-overlay"></div>
             <img 
@@ -35,7 +35,7 @@ const BlogCard: React.FC<{ blog: BlogPost }> = ({ blog }) => (
                 </div>
             </div>
         </div>
-    </div>
+    </Link>
 );
 
 const BlogSection: React.FC = () => {

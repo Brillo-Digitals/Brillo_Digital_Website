@@ -13,6 +13,7 @@ import BlogSection from './components/BlogSection';
 import { Routes, Route, Link } from 'react-router-dom';
 import PortfolioCategory from './pages/PortfolioCategory';
 import BlogList from './pages/BlogList';
+import BlogDetail from './pages/BlogDetail';
 
 function Home() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio/:category" element={<PortfolioCategory />} />
           <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
         </Routes>
       </main>
     </div>
