@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
                                 onFocus={() => handleFocus('email')}
                                 onBlur={handleBlur}
                                 className={inputClasses('email')}
-                                placeholder="john@example.com"
+                                placeholder="name@example.com"
                             />
                         </div>
 
