@@ -38,8 +38,17 @@ const Github: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="glass-card p-8 md:p-12 relative overflow-hidden"
             >
-                {/* Background Accent */}
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand/10 rounded-full blur-[80px]"></div>
+                {/* Moving Background Accents */}
+                <motion.div 
+                    animate={{ x: [0, -40, 0], y: [0, 60, 0], scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
+                    transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+                    className="absolute -top-40 -right-40 w-80 h-80 bg-brand/20 rounded-full blur-[80px]"
+                ></motion.div>
+                <motion.div 
+                    animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.5, 1], opacity: [0.3, 0.7, 0.3] }}
+                    transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
+                    className="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-light/10 rounded-full blur-[60px]"
+                ></motion.div>
 
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 gap-6 relative z-10">
                     <div>

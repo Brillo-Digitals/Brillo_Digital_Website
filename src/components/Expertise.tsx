@@ -57,12 +57,24 @@ const ExpertiseCard: React.FC<CardProps> = ({ data }) => {
             className="h-full"
         >
             <motion.div
-                style={{ rotateX, rotateY }}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                className="h-full group relative p-8 rounded-2xl bg-background-light/40 backdrop-blur-lg border border-white/5 hover:border-brand/40 transition-colors duration-300"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: data.delay }}
+                className="h-full"
             >
-                {/* Glow effect */}
+                <motion.div
+                    style={{ rotateX, rotateY }}
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                    className="h-full group relative p-8 rounded-2xl bg-background-light/40 backdrop-blur-lg border border-white/5 hover:border-brand/40 transition-colors duration-300 overflow-hidden"
+                >
+                    {/* Continuous glow background */}
+                    <motion.div
+                        animate={{ opacity: [0.1, 0.3, 0.1], scale: [1, 1.2, 1] }}
+                        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: data.delay }}
+                        className="absolute -top-20 -right-20 w-40 h-40 bg-brand/20 rounded-full blur-[50px] pointer-events-none"
+                    />
+
+                    {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-brand/0 group-hover:bg-brand/5 blur-xl transition-all duration-500 pointer-events-none"></div>
                 <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-brand/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none mix-blend-overlay"></div>
 
@@ -82,6 +94,7 @@ const ExpertiseCard: React.FC<CardProps> = ({ data }) => {
                         ))}
                     </ul>
                 </div>
+            </motion.div>
             </motion.div>
         </motion.div>
     );

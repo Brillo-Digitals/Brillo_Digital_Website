@@ -9,8 +9,10 @@ import Github from './components/Github';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BlogSection from './components/BlogSection';
 import { Routes, Route, Link } from 'react-router-dom';
 import PortfolioCategory from './pages/PortfolioCategory';
+import BlogList from './pages/BlogList';
 
 function Home() {
   return (
@@ -27,6 +29,7 @@ function Home() {
           <a href="#expertise" className="hover:text-brand transition-colors text-text/80">Expertise</a>
           <a href="#portfolio" className="hover:text-brand transition-colors text-text/80">Portfolio</a>
           <a href="#github" className="hover:text-brand transition-colors text-text/80">Open Source</a>
+          <a href="#blog" className="hover:text-brand transition-colors text-text/80">Blog</a>
           <a href="#contact" className="hover:text-brand transition-colors text-text/80">Contact</a>
         </div>
       </nav>
@@ -37,6 +40,7 @@ function Home() {
       <Portfolio />
       <Github />
       <Skills />
+      <BlogSection />
       <Contact />
       <Footer />
     </>
@@ -53,6 +57,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio/:category" element={<PortfolioCategory />} />
+          <Route path="/blog" element={<BlogList />} />
         </Routes>
       </main>
     </div>

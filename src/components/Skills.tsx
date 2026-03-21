@@ -83,14 +83,25 @@ const Skills: React.FC = () => {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.3, delay: (groupIdx * 0.1) + (itemIdx * 0.05) }}
-                                    className="group flex flex-col items-center justify-center p-4 glass rounded-xl border border-white/5 hover:border-brand/50 hover:bg-brand/10 transition-all duration-300 cursor-default"
+                                    className="h-full"
                                 >
+                                    <motion.div
+                                        animate={{ y: [0, -6, 0] }}
+                                        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut", delay: (groupIdx * 0.1) + (itemIdx * 0.05) }}
+                                        className="group h-full flex flex-col items-center justify-center p-4 glass rounded-xl border border-white/5 hover:border-brand/50 hover:bg-brand/10 transition-all duration-300 cursor-default relative overflow-hidden"
+                                    >
+                                        <motion.div
+                                            animate={{ opacity: [0, 0.15, 0] }}
+                                            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: (groupIdx * 0.1) + (itemIdx * 0.05) }}
+                                            className="absolute inset-0 bg-brand/20 blur-xl pointer-events-none"
+                                        />
                                     <div className="text-3xl mb-3 text-text-muted group-hover:text-brand-light transition-colors drop-shadow-[0_0_8px_rgba(218,175,111,0)] group-hover:drop-shadow-[0_0_8px_rgba(218,175,111,0.6)]">
                                         {item.icon}
                                     </div>
                                     <span className="text-sm font-medium text-text text-center">
                                         {item.name}
                                     </span>
+                                    </motion.div>
                                 </motion.div>
                             ))}
                         </div>

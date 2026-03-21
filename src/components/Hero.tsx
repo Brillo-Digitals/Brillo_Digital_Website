@@ -22,7 +22,17 @@ const Hero: React.FC = () => {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 sm:px-12 z-10">
-            <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12">
+            {/* Background Image and Overlay */}
+            <div 
+                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')",
+                }}
+            />
+            {/* Dark gradient overlay for readability */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
+
+            <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
 
                 {/* Left: Text Content */}
                 <div className="flex flex-col items-center text-center lg:items-start lg:text-left flex-1">
