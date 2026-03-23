@@ -405,4 +405,58 @@ export const blogs: BlogPost[] = [
       <p>Wix SEO is no longer a reason to avoid the platform for small and medium-sized projects. It's still a reason to choose something else if technical SEO is your primary competitive lever.</p>
     `,
     },
+    {
+        id: "15",
+        title: "What Should I Do After Designing My Shopify Store?",
+        excerpt:
+            "Your store looks great — but it's not ready to sell yet. Here's the exact checklist every Shopify merchant needs to run through before going live.",
+        date: "March 22, 2026",
+        readTime: "7 min read",
+        image:
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+        category: "E-Commerce",
+        content: `
+      <p>Getting your Shopify store looking good is only half the job. A beautiful design with broken checkout, missing legal pages, or unoptimized product listings will kill conversions before a single ad runs. Before you touch your marketing budget, work through every layer of your store's readiness — front to back.</p>
+
+      <h3>Configure Your Store Settings First</h3>
+      <p>Start in the settings you probably skipped during design. Your store currency, timezone, and unit system need to match your target market exactly. Set up your payment providers — Shopify Payments where available, or a gateway like Paystack or Flutterwave if you're selling in Nigeria — and test a real transaction using a Shopify Bogus Gateway order before going live. Confirm your shipping zones, rates, and carrier integrations reflect what you'll actually charge customers. Tax settings, particularly for VAT or GST, need to be correctly configured per region or you'll face headaches at the end of every quarter.</p>
+
+      <blockquote>"A store that looks finished and a store that's ready to sell are two completely different things. The gap between them is where most launches fail."</blockquote>
+
+      <h3>Your Product Listings Are Your Sales Team</h3>
+      <p>Every product needs a title written for search intent, not just aesthetics. Descriptions should answer the questions a customer would ask a sales assistant — material, sizing, care instructions, what makes it worth the price. Upload multiple high-quality images per product including lifestyle shots, close-up details, and size-reference photos. Set up product variants correctly so inventory tracks accurately. If you're using metafields for custom data, verify they're displaying as intended on your product template. Finally, run through your collections and confirm every product is correctly tagged and appearing where it should.</p>
+
+      <h3>Legal Pages, Email, and the Pre-Launch Checklist</h3>
+      <p>Shopify auto-generates Privacy Policy, Refund Policy, Terms of Service, and Shipping Policy pages — review and customize each one to reflect your actual policies, because the defaults are generic placeholders that don't protect you legally. Connect a professional email address (not a Gmail) to your store's sender settings so order confirmations and abandoned cart emails don't land in spam folders. Set up your Google Analytics and Meta Pixel before your first visitor arrives — retroactive data is impossible. Remove the storefront password, submit your sitemap to Google Search Console, and place a test order from a real device on mobile and desktop to confirm the full purchase flow works end to end.</p>
+
+      <p>Launching before you're operationally ready is significantly more damaging than launching a week late. Audit everything methodically, fix what you find, then open the doors.</p>
+    `,
+    },
+    {
+        id: "16",
+        title: "The Shopify and TikTok Ad Combo That's Driving Sales in 2026",
+        excerpt:
+            "Why TikTok remains the most powerful paid acquisition channel for Shopify stores — and how to build a system that actually converts.",
+        date: "March 23, 2026",
+        readTime: "6 min read",
+        image:
+            "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074&auto=format&fit=crop",
+        category: "Marketing",
+        content: `
+      <p>TikTok and Shopify have built one of the most seamless e-commerce integrations in paid social advertising. The combination of TikTok's unmatched reach with young, purchase-intent audiences and Shopify's native product catalog sync creates a pipeline that, when set up correctly, can take a product from zero to sold-out faster than any other channel available to independent merchants today.</p>
+
+      <h3>Setting Up the TikTok Shopify Integration</h3>
+      <p>Install the official TikTok app from the Shopify App Store and connect your TikTok Business account. This syncs your product catalog directly to TikTok, enabling product tags in organic videos and dynamic product ads that pull live inventory, pricing, and images without manual uploads. More importantly, it installs the TikTok Pixel on your storefront automatically — this pixel tracks ViewContent, AddToCart, InitiateCheckout, and Purchase events, giving TikTok's algorithm the signal data it needs to optimize your campaigns toward buyers rather than browsers. Let the pixel collect at least 50 purchase events before you draw conclusions from your campaign performance data.</p>
+
+      <blockquote>"TikTok doesn't reward the biggest ad budget. It rewards the most authentic creative. A $50 video shot on a phone regularly outperforms a $5,000 production on this platform."</blockquote>
+
+      <h3>Creative Strategy: Native Beats Polished</h3>
+      <p>TikTok's feed algorithm rewards content that feels like TikTok, not content that feels like an ad. The highest-performing Shopify store creatives on TikTok are unboxing videos, before-and-after demonstrations, "I found this product and here's what happened" narratives, and creator-style reviews with authentic voiceover. Hook the viewer in the first two seconds — a surprising visual, an unexpected statement, or a result that makes someone stop scrolling. Produce a minimum of five to eight creative variations per campaign so TikTok's algorithm can find your winning format. The creative that works on Instagram Reels will often underperform on TikTok, and vice versa — treat them as separate channels with separate production briefs.</p>
+
+      <h3>Campaign Structure and Budget Optimization</h3>
+      <p>For Shopify stores starting on TikTok ads, begin with a single conversion campaign optimized for Purchase events, targeting a broad audience in your market with no interest stacking. TikTok's algorithm is powerful enough that narrow interest targeting often restricts it from finding your actual buyers. Set your budget at the campaign level rather than the ad group level to allow automatic budget reallocation toward your best-performing creative. Run ads for a minimum of five to seven days before making optimization decisions — TikTok's learning phase requires consistent data before delivery stabilizes. Once you identify a winning creative, test it against new hooks and calls to action before you scale spend, not after.</p>
+
+      <p>The Shopify-TikTok combination works because the integration is tight, the audience is receptive, and the algorithm rewards good creative over big budgets. That's a rare and genuinely leveling dynamic for independent merchants competing against larger brands.</p>
+    `,
+    },
 ];
