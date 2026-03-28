@@ -22,15 +22,15 @@ const Hero: React.FC = () => {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 sm:px-12 z-10">
-            {/* Background Image and Overlay */}
+            {/* Background Image with Classy Blend */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity grayscale"
                 style={{
                     backgroundImage: "url('/banner.jpeg')",
                 }}
             />
-            {/* Dark gradient overlay for readability */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-background/90 via-background/80 to-background" />
+            {/* Dark gradient overlay for readability and to reveal the global mesh background */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
 
             <div className="max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
 
