@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
@@ -10,6 +10,11 @@ const BlogList: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const [activeCategory, setActiveCategory] = useState("All");
+    const categories = ["All", ...Array.from(new Set(blogs.map(b => b.category)))];
+    const filteredBlogs = activeCategory === "All" ? blogs : blogs.filter(b => b.category === activeCategory);
+
 
     return (
         <div className="min-h-screen pt-24 pb-12 px-6 md:px-12 relative z-10 max-w-7xl mx-auto flex flex-col">
@@ -29,9 +34,26 @@ const BlogList: React.FC = () => {
                 
                 <h1 className="text-4xl md:text-6xl font-bold text-text mb-4">All Articles</h1>
                 <div className="w-24 h-1 bg-brand rounded-full mb-6"></div>
-                <p className="text-xl text-text-muted max-w-2xl">
+                <p className="text-xl text-text-muted max-w-2xl mb-10">
                     Dive into our entire archive of tutorials, insights, and tech deep dives.
                 </p>
+
+                {/* Categories */}
+                <div className="flex flex-wrap gap-3">
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => setActiveCategory(category)}
+                            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                                activeCategory === category
+                                    ? 'bg-brand text-white shadow-[0_0_15px_rgba(218,175,111,0.5)]'
+                                    : 'glass text-text/70 hover:text-text hover:bg-white/5 border border-white/5'
+                            }`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
             </motion.div>
 
             <motion.div 
@@ -46,7 +68,7 @@ const BlogList: React.FC = () => {
                 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"
             >
-                {blogs.map((blog: BlogPost) => (
+                {filteredBlogs.map((blog: BlogPost) => (
                     <motion.div
                         key={blog.id}
                         variants={{

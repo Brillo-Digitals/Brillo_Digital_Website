@@ -59,7 +59,7 @@ const BlogDetail: React.FC = () => {
                     <div className="mb-6 inline-block px-4 py-1.5 rounded-full glass border border-brand/30 text-brand-light text-sm font-semibold tracking-wide">
                         {blog.category}
                     </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-text mb-6 leading-tight">
                         {blog.title}
                     </h1>
                     
@@ -101,7 +101,7 @@ const BlogDetail: React.FC = () => {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="prose prose-invert prose-lg max-w-none 
                                prose-headings:text-text prose-headings:font-bold prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6
-                               prose-p:text-text-muted prose-p:leading-relaxed prose-p:mb-8
+                               prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-8
                                prose-a:text-brand hover:prose-a:text-brand-light 
                                prose-strong:text-text prose-strong:font-semibold
                                prose-blockquote:border-l-brand prose-blockquote:bg-brand/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:text-brand-light prose-blockquote:italic

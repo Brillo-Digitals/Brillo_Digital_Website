@@ -150,13 +150,13 @@ const Portfolio: React.FC = () => {
                                         e.stopPropagation();
                                         navigate(`/portfolio/${toSlug(project.category)}`);
                                     }}
-                                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand/80 text-white backdrop-blur-sm shadow hover:bg-brand transition-colors z-10"
+                                    className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brand/80 text-white backdrop-blur-sm shadow hover:bg-brand transition-colors z-10"
                                 >
                                     {project.category}
                                 </button>
 
                                 {/* Link icons */}
-                                <div className="absolute flex gap-2 transition-all duration-300 translate-y-2 opacity-0 top-3 right-3 group-hover:opacity-100 group-hover:translate-y-0">
+                                <div className="absolute flex gap-2 transition-all duration-300 translate-y-2 opacity-0 top-4 right-4 group-hover:opacity-100 group-hover:translate-y-0">
                                     {project.github && project.github !== "#" && (
                                         <a
                                             href={project.github}
@@ -232,7 +232,7 @@ const Portfolio: React.FC = () => {
                                     <div className="flex flex-col gap-3 pt-4 mt-auto border-t sm:flex-row border-white/10">
                                         <button
                                             onClick={() => handleDownloadApk(project)}
-                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-brand to-brand-light text-white font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(218,175,111,0.4)] hover:scale-[1.02] transition-all duration-300"
+                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 glass border border-brand/50 text-brand-light font-semibold rounded-xl hover:bg-brand/10 hover:border-brand hover:scale-[1.02] transition-all duration-300 shadow-[0_0_10px_rgba(218,175,111,0.05)] hover:shadow-[0_0_20px_rgba(218,175,111,0.2)]"
                                         >
                                             <Download className="w-4 h-4" />
                                             Download APK
