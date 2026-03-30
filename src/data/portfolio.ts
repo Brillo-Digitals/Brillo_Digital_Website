@@ -302,7 +302,7 @@ export const PORTFOLIO_DATA: Project[] = [
         downloadName: ""
     },
     {
-        id: 9,
+        id: 16,
         title: "The Little Boathouse",
         description: "A clean and elegant Shopify store designed for a lifestyle and home décor brand, focused on storytelling and smooth shopping experience.",
         category: TABS[4],
@@ -381,6 +381,18 @@ export const PORTFOLIO_DATA: Project[] = [
         tags: ["Shopify", "AJAX", "Liquid", "Performance Optimization"],
         image: "/images/emotoworx.png",
         live: "https://emotoworx.com",
+        hasApk: false,
+        downloadLink: "#",
+        downloadName: ""
+    },
+    {
+        id: 26,
+        title: "Aitiigehl - Luxury Fashion Designer Store",
+        description: "A premium WordPress & WooCommerce fashion store for a high-end designer, featuring a bespoke lookbook, ready-to-wear collections, and artisan-crafted UI with extensive PHP modifications.",
+        category: TABS[4],
+        tags: ["WordPress", "WooCommerce", "PHP", "Custom Design", "Luxury Fashion", "E-Commerce"],
+        image: "/images/aitiigehl.png",
+        live: "https://aitiigehl.com.ng/",
         hasApk: false,
         downloadLink: "#",
         downloadName: ""
