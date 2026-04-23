@@ -4,7 +4,7 @@ import { Github, ExternalLink, Download, Apple, CheckCircle, ThumbsUp, Zap } fro
 import { useNavigate } from 'react-router-dom';
 import { useEngagement } from '../hooks/useEngagement';
 
-import { TABS, type Project, PORTFOLIO_DATA, toSlug } from '../data/portfolio';
+import { TABS, type Project, PORTFOLIO_DATA, toProjectSlug, toSlug } from '../data/portfolio';
 
 const INITIAL_VISIBLE = 13;
 
@@ -85,38 +85,43 @@ const Portfolio: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col items-center mb-12 text-center"
             >
-                <h2 className="mb-4 text-3xl font-bold md:text-5xl text-text">Featured Work</h2>
-                <div className="w-20 h-1 mb-8 rounded-full bg-brand"></div>
+                <div className="editorial-shell p-6 md:p-8 w-full max-w-4xl">
+                    <span className="eyebrow mb-4">Selected case studies</span>
+                    <h2 className="mb-4 text-3xl font-bold md:text-5xl headline-gradient">Featured Work</h2>
+                    <p className="mb-8 text-text/70 max-w-2xl mx-auto">
+                        Each project links to a dedicated page with delivery context, implementation notes, and outcome-focused insights.
+                    </p>
 
-                {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-3">
-                    {TABS.map((tab) => (
-                        <div key={tab} className="relative group/tab">
-                            <button
-                                onClick={() => handleTabChange(tab)}
-                                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === tab
-                                    ? 'bg-brand text-white shadow-[0_0_15px_rgba(218,175,111,0.5)]'
-                                    : 'glass text-text/70 hover:text-text hover:bg-white/5 border border-white/5'
-                                    }`}
-                            >
-                                {tab}
-                                {activeTab === tab && tab !== "All" && (
-                                    <motion.span
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            navigate(`/portfolio/${toSlug(tab)}`);
-                                        }}
-                                        className="p-1 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
-                                        title={`Go to ${tab} page`}
-                                    >
-                                        <ExternalLink className="w-3 h-3" />
-                                    </motion.span>
-                                )}
-                            </button>
-                        </div>
-                    ))}
+                    {/* Tabs */}
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {TABS.map((tab) => (
+                            <div key={tab} className="relative group/tab">
+                                <button
+                                    onClick={() => handleTabChange(tab)}
+                                    className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${activeTab === tab
+                                        ? 'bg-brand text-white shadow-[0_0_15px_rgba(218,175,111,0.5)]'
+                                        : 'glass text-text/70 hover:text-text hover:bg-white/5 border border-white/5'
+                                        }`}
+                                >
+                                    {tab}
+                                    {activeTab === tab && tab !== "All" && (
+                                        <motion.span
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                navigate(`/portfolio/${toSlug(tab)}`);
+                                            }}
+                                            className="p-1 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
+                                            title={`Go to ${tab} page`}
+                                        >
+                                            <ExternalLink className="w-3 h-3" />
+                                        </motion.span>
+                                    )}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </motion.div>
 
@@ -133,7 +138,8 @@ const Portfolio: React.FC = () => {
                             exit="exit"
                             whileHover={{ y: -8, transition: { duration: 0.22, ease: "easeOut" } }}
                             key={project.id}
-                            className="flex flex-col overflow-hidden cursor-default glass-card rounded-2xl group"
+                            onClick={() => navigate(`/portfolio/project/${project.id}/${toProjectSlug(project.title)}`)}
+                            className="flex flex-col overflow-hidden cursor-pointer editorial-shell rounded-2xl group"
                         >
                             {/* Image */}
                             <div className="relative h-56 overflow-hidden bg-brand-dark/20">
@@ -160,6 +166,7 @@ const Portfolio: React.FC = () => {
                                     {project.github && project.github !== "#" && (
                                         <a
                                             href={project.github}
+                                            onClick={(e) => e.stopPropagation()}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white"
@@ -170,6 +177,7 @@ const Portfolio: React.FC = () => {
                                     {project.live && project.live !== "#" && (
                                         <a
                                             href={project.live}
+                                            onClick={(e) => e.stopPropagation()}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white"
@@ -181,13 +189,24 @@ const Portfolio: React.FC = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="flex flex-col flex-1 p-6">
+                            <div className="flex flex-col flex-1 p-6 ink-grid">
                                 <h3 className="mb-2 text-xl font-bold leading-snug transition-colors duration-300 text-text group-hover:text-brand-light">
                                     {project.title}
                                 </h3>
                                 <p className="flex-1 mb-5 text-sm leading-relaxed text-text/75">
                                     {project.description}
                                 </p>
+
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        navigate(`/portfolio/project/${project.id}/${toProjectSlug(project.title)}`);
+                                    }}
+                                    className="mb-4 inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-brand-light hover:text-brand transition-colors"
+                                >
+                                    View Project Page
+                                    <ExternalLink className="w-3.5 h-3.5" />
+                                </button>
 
                                 {/* Tags */}
                                 <div className="flex flex-wrap gap-2 mb-4">
@@ -204,7 +223,10 @@ const Portfolio: React.FC = () => {
                                 {/* Engagement: Like & Useful */}
                                 <div className="flex items-center gap-4 py-3 mt-auto border-t border-white/10">
                                     <button
-                                        onClick={() => toggleLike(project.id)}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            toggleLike(project.id);
+                                        }}
                                         className={`flex items-center gap-1.5 transition-colors ${
                                             userLikes[project.id] ? 'text-brand' : 'text-text/60 hover:text-text'
                                         }`}
@@ -215,7 +237,10 @@ const Portfolio: React.FC = () => {
                                         </span>
                                     </button>
                                     <button
-                                        onClick={() => toggleUseful(project.id)}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            toggleUseful(project.id);
+                                        }}
                                         className={`flex items-center gap-1.5 transition-colors ${
                                             userUseful[project.id] ? 'text-brand-light' : 'text-text/60 hover:text-text'
                                         }`}
@@ -231,7 +256,10 @@ const Portfolio: React.FC = () => {
                                 {project.hasApk && (
                                     <div className="flex flex-col gap-3 pt-4 mt-auto border-t sm:flex-row border-white/10">
                                         <button
-                                            onClick={() => handleDownloadApk(project)}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleDownloadApk(project);
+                                            }}
                                             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 glass border border-brand/50 text-brand-light font-semibold rounded-xl hover:bg-brand/10 hover:border-brand hover:scale-[1.02] transition-all duration-300 shadow-[0_0_10px_rgba(218,175,111,0.05)] hover:shadow-[0_0_20px_rgba(218,175,111,0.2)]"
                                         >
                                             <Download className="w-4 h-4" />

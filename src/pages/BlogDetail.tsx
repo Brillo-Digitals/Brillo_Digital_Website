@@ -54,16 +54,16 @@ const BlogDetail: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="mb-10 text-center md:text-left"
+                    className="mb-10 text-center md:text-left editorial-shell p-6 md:p-8"
                 >
-                    <div className="mb-6 inline-block px-4 py-1.5 rounded-full glass border border-brand/30 text-brand-light text-sm font-semibold tracking-wide">
+                    <div className="mb-6 eyebrow">
                         {blog.category}
                     </div>
-                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-text mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-extrabold mb-6 leading-tight headline-gradient">
                         {blog.title}
                     </h1>
                     
-                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-text-muted border-b border-white/10 pb-8">
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-text-muted border-t border-white/10 pt-6">
                         <div className="flex items-center gap-2">
                             <Calendar className="w-5 h-5 text-brand" />
                             <span>{blog.date}</span>
@@ -84,7 +84,7 @@ const BlogDetail: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="w-full h-[40vh] md:h-[60vh] rounded-3xl overflow-hidden mb-16 relative border border-white/10 shadow-[0_0_40px_rgba(218,175,111,0.15)]"
+                    className="w-full h-[40vh] md:h-[60vh] editorial-shell overflow-hidden mb-16 relative border border-white/10 shadow-[0_0_40px_rgba(218,175,111,0.15)]"
                 >
                     <img 
                         src={blog.image} 
@@ -92,6 +92,7 @@ const BlogDetail: React.FC = () => {
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent mix-blend-multiply opacity-50"></div>
+                    <div className="absolute inset-0 ink-grid opacity-15 pointer-events-none"></div>
                 </motion.div>
 
                 {/* Article Content */}
@@ -105,7 +106,7 @@ const BlogDetail: React.FC = () => {
                                prose-a:text-brand hover:prose-a:text-brand-light 
                                prose-strong:text-text prose-strong:font-semibold
                                prose-blockquote:border-l-brand prose-blockquote:bg-brand/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:text-brand-light prose-blockquote:italic
-                               mb-24"
+                               mb-24 editorial-shell p-6 md:p-8"
                     dangerouslySetInnerHTML={{ __html: blog.content }} 
                 />
 
@@ -114,7 +115,7 @@ const BlogDetail: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-24 p-8 glass-card rounded-3xl border border-brand/20 text-center relative overflow-hidden flex flex-col items-center"
+                    className="mb-24 p-8 editorial-shell rounded-3xl border border-brand/20 text-center relative overflow-hidden flex flex-col items-center"
                 >
                      <div className="absolute inset-0 bg-brand/5 pointer-events-none"></div>
                      <h3 className="text-3xl font-bold text-text mb-4 z-10">Enjoyed this article?</h3>

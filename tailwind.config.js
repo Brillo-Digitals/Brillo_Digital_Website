@@ -27,7 +27,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Fraunces"', 'serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
       },
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',

@@ -42,10 +42,10 @@ const Hero: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand/30 text-brand-light text-sm font-medium tracking-wide"
+                        className="mb-4 eyebrow"
                     >
                         <span className="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                        Welcome to my digital space
+                        Product engineer and growth partner
                     </motion.div>
 
                     {/* Name */}
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 text-text"
+                        className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 headline-gradient"
                     >
                         Uthman Adesiyan
                     </motion.h1>
@@ -63,11 +63,15 @@ const Hero: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-text-muted font-light mb-8 flex flex-col sm:flex-row items-center lg:items-start gap-2"
+                        className="text-xl md:text-2xl text-text-muted font-light mb-4 flex flex-col sm:flex-row items-center lg:items-start gap-2"
                     >
                         <span>Founder of</span>
                         <span className="font-semibold text-text">Brillo Digitals</span>
                     </motion.p>
+
+                    <p className="max-w-2xl text-text/75 mb-8 text-base md:text-lg leading-relaxed">
+                        I build digital products with a practical mix of engineering depth and conversion strategy, from mobile experiences to ecommerce systems that generate revenue.
+                    </p>
 
                     {/* Rotating Titles */}
                     <div className="h-16 md:h-14 mb-10 w-full overflow-hidden relative flex justify-center lg:justify-start items-center">
@@ -134,7 +138,7 @@ const Hero: React.FC = () => {
                         transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
                         className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 glass rounded-full border border-brand/30 text-brand-light text-xs font-semibold tracking-widest shadow-lg whitespace-nowrap"
                     >
-                        ✦ Brillo Digitals ✦
+                        Brillo Digitals Studio
                     </motion.div>
                 </motion.div>
 

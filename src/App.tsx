@@ -1,38 +1,14 @@
-
+import { lazy, Suspense } from 'react';
 import Background from './components/Background';
 import Cursor from './components/Cursor';
-import Hero from './components/Hero';
-import About from './components/About';
-import Expertise from './components/Expertise';
-import Portfolio from './components/Portfolio';
-import Github from './components/Github';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import BlogSection from './components/BlogSection';
 import { Routes, Route } from 'react-router-dom';
-import PortfolioCategory from './pages/PortfolioCategory';
-import BlogList from './pages/BlogList';
-import BlogDetail from './pages/BlogDetail';
 import Navbar from './components/Navbar';
 
-function Home() {
-  return (
-    <>
-
-
-      <Hero />
-      <About />
-      <Expertise />
-      <Portfolio />
-      <Github />
-      <Skills />
-      <BlogSection />
-      <Contact />
-      <Footer />
-    </>
-  );
-}
+const Home = lazy(() => import('./pages/HomePage'));
+const PortfolioCategory = lazy(() => import('./pages/PortfolioCategory'));
+const PortfolioProject = lazy(() => import('./pages/PortfolioProject'));
+const BlogList = lazy(() => import('./pages/BlogList'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 
 function App() {
   return (
@@ -42,12 +18,23 @@ function App() {
       <Navbar />
 
       <main className="relative z-10 w-full overflow-hidden">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio/:category" element={<PortfolioCategory />} />
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
-        </Routes>
+        <Suspense
+          fallback={
+            <div className="min-h-[60vh] flex items-center justify-center px-6">
+              <div className="glass rounded-full border border-brand/30 px-6 py-3 text-sm tracking-[0.14em] uppercase text-brand-light">
+                Loading page
+              </div>
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/portfolio/:category" element={<PortfolioCategory />} />
+            <Route path="/portfolio/project/:id/:slug?" element={<PortfolioProject />} />
+            <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+          </Routes>
+        </Suspense>
       </main>
     </div>
   );

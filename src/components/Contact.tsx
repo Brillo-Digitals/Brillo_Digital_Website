@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Send, MessageCircle } from 'lucide-react';
+import { Mail, Linkedin, Send, MessageCircle, Github } from 'lucide-react';
 
 const Contact: React.FC = () => {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -82,6 +82,16 @@ const Contact: React.FC = () => {
                             <div>
                                 <div className="text-sm text-text-muted">WhatsApp</div>
                                 <div className="font-medium text-text">+234 8146269699</div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Brillo-Digitals" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl glass hover:bg-white/5 border border-white/5 hover:border-brand/30 transition-all group">
+                            <div className="p-3 rounded-lg bg-brand/10 text-brand group-hover:scale-110 transition-transform">
+                                <Github className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <div className="text-sm text-text-muted">GitHub</div>
+                                <div className="font-medium text-text">Brillo-Digitals</div>
                             </div>
                         </a>
                     </div>

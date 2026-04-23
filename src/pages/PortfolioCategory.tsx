@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, ExternalLink, Download, Apple, CheckCircle, ArrowLeft, ThumbsUp, Zap } from 'lucide-react';
-import { PORTFOLIO_DATA, type Project, TABS, toSlug } from '../data/portfolio';
+import { PORTFOLIO_DATA, type Project, TABS, toProjectSlug, toSlug } from '../data/portfolio';
 import { useEngagement } from '../hooks/useEngagement';
 
 const PortfolioCategory: React.FC = () => {
@@ -59,7 +59,7 @@ const PortfolioCategory: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-12 flex flex-col gap-6"
             >
-                <div>
+                <div className="editorial-shell p-6 md:p-8">
                     <button
                         onClick={() => navigate('/')}
                         className="inline-flex items-center gap-2 text-text/70 hover:text-brand transition-colors mb-4"
@@ -67,11 +67,14 @@ const PortfolioCategory: React.FC = () => {
                         <ArrowLeft className="w-5 h-5" />
                         Back to Home
                     </button>
-                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-text to-text/60 bg-clip-text text-transparent">
+                    <span className="eyebrow mb-4">Portfolio archive</span>
+                    <h1 className="text-4xl md:text-6xl font-bold headline-gradient">
                         {actualCategory} Projects
                     </h1>
+                    <p className="mt-4 text-text/70 max-w-2xl">
+                        Browse complete case studies with deeper context around delivery decisions, implementation details, and practical outcomes.
+                    </p>
                 </div>
-                <div className="w-20 h-1 rounded-full bg-brand"></div>
             </motion.div>
 
             {/* Masonry Layout */}
@@ -82,7 +85,8 @@ const PortfolioCategory: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: i * 0.05 }}
                         key={project.id}
-                        className="break-inside-avoid shadow-xl glass-card rounded-2xl overflow-hidden group border border-white/5"
+                        onClick={() => navigate(`/portfolio/project/${project.id}/${toProjectSlug(project.title)}`)}
+                        className="break-inside-avoid shadow-xl editorial-shell rounded-2xl overflow-hidden group border border-white/5 cursor-pointer"
                     >
                         {/* Image wrapper - Masonry lets images decide their height or you can use standard aspect ratios. The user wants image to retain it's dimension */}
                         <div className="relative overflow-hidden bg-brand-dark/20 flex items-center justify-center">
@@ -97,6 +101,7 @@ const PortfolioCategory: React.FC = () => {
                                 {project.github && project.github !== "#" && (
                                     <a
                                         href={project.github}
+                                        onClick={(e) => e.stopPropagation()}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="p-2.5 transition-colors rounded-full glass hover:bg-brand hover:text-white"
@@ -107,6 +112,7 @@ const PortfolioCategory: React.FC = () => {
                                 {project.live && project.live !== "#" && (
                                     <a
                                         href={project.live}
+                                        onClick={(e) => e.stopPropagation()}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="p-2.5 transition-colors rounded-full glass hover:bg-brand hover:text-white"
@@ -118,13 +124,24 @@ const PortfolioCategory: React.FC = () => {
                         </div>
 
                         {/* Content */}
-                        <div className="p-6 relative z-10">
+                        <div className="p-6 relative z-10 ink-grid">
                             <h3 className="mb-3 text-2xl font-bold leading-snug transition-colors duration-300 text-text group-hover:text-brand-light">
                                 {project.title}
                             </h3>
                             <p className="mb-6 text-base leading-relaxed text-text/75">
                                 {project.description}
                             </p>
+
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    navigate(`/portfolio/project/${project.id}/${toProjectSlug(project.title)}`);
+                                }}
+                                className="mb-5 inline-flex items-center gap-2 text-xs font-bold tracking-[0.14em] uppercase text-brand-light hover:text-brand transition-colors"
+                            >
+                                Read Full Project
+                                <ExternalLink className="w-3.5 h-3.5" />
+                            </button>
 
                             <div className="flex flex-wrap gap-2 mb-6">
                                 {project.tags.map(tag => (
@@ -136,7 +153,10 @@ const PortfolioCategory: React.FC = () => {
                                     </span>
                                 ))}
                                 <button 
-                                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
                                     className="px-3 py-1.5 text-xs font-bold tracking-widest uppercase bg-brand/20 text-brand-light border border-brand/30 rounded-full hover:bg-brand/30 transition-colors"
                                 >
                                     {project.category}
@@ -146,7 +166,10 @@ const PortfolioCategory: React.FC = () => {
                             {/* Engagement: Like & Useful */}
                             <div className="flex items-center gap-4 py-3 mt-auto border-t border-white/10">
                                 <button
-                                    onClick={() => toggleLike(project.id)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        toggleLike(project.id);
+                                    }}
                                     className={`flex items-center gap-1.5 transition-colors ${
                                         userLikes[project.id] ? 'text-brand' : 'text-text/60 hover:text-text'
                                     }`}
@@ -157,7 +180,10 @@ const PortfolioCategory: React.FC = () => {
                                     </span>
                                 </button>
                                 <button
-                                    onClick={() => toggleUseful(project.id)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        toggleUseful(project.id);
+                                    }}
                                     className={`flex items-center gap-1.5 transition-colors ${
                                         userUseful[project.id] ? 'text-brand-light' : 'text-text/60 hover:text-text'
                                     }`}
@@ -173,7 +199,10 @@ const PortfolioCategory: React.FC = () => {
                             {project.hasApk && (
                                 <div className="flex flex-col gap-3 pt-6 border-t sm:flex-row border-white/10">
                                     <button
-                                        onClick={() => handleDownloadApk(project)}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleDownloadApk(project);
+                                        }}
                                         className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-brand to-brand-light text-white font-semibold rounded-xl hover:shadow-[0_0_20px_rgba(218,175,111,0.4)] hover:scale-[1.02] transition-all duration-300 shadow-lg"
                                     >
                                         <Download className="w-4 h-4" />

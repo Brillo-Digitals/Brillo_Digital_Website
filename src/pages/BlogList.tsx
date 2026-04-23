@@ -32,11 +32,13 @@ const BlogList: React.FC = () => {
                     Back to Home
                 </Link>
                 
-                <h1 className="text-4xl md:text-6xl font-bold text-text mb-4">All Articles</h1>
-                <div className="w-24 h-1 bg-brand rounded-full mb-6"></div>
-                <p className="text-xl text-text-muted max-w-2xl mb-10">
-                    Dive into our entire archive of tutorials, insights, and tech deep dives.
-                </p>
+                <div className="editorial-shell p-6 md:p-8 mb-8">
+                    <span className="eyebrow mb-4">Writing desk</span>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4 headline-gradient">All Articles</h1>
+                    <p className="text-xl text-text-muted max-w-2xl">
+                        Dive into practical breakdowns, strategy notes, and implementation stories from real client and product work.
+                    </p>
+                </div>
 
                 {/* Categories */}
                 <div className="flex flex-wrap gap-3">
@@ -77,7 +79,7 @@ const BlogList: React.FC = () => {
                         }}
                         className="h-full"
                     >
-                        <Link to={`/blog/${blog.id}`} className="block glass-card rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-brand/40 transition-all duration-300 h-full">
+                        <Link to={`/blog/${blog.id}`} className="block editorial-shell rounded-2xl overflow-hidden flex flex-col group border border-white/5 hover:border-brand/40 transition-all duration-300 h-full">
                         <div className="relative h-56 overflow-hidden">
                             <div className="absolute inset-0 bg-brand/10 group-hover:bg-transparent transition-colors z-10 mix-blend-overlay"></div>
                             <img 
@@ -89,7 +91,7 @@ const BlogList: React.FC = () => {
                                 {blog.category}
                             </div>
                         </div>
-                        <div className="p-6 flex flex-col flex-grow">
+                        <div className="p-6 flex flex-col flex-grow ink-grid">
                             <h2 className="text-2xl font-bold text-text mb-3 line-clamp-2 group-hover:text-brand-light transition-colors">
                                 {blog.title}
                             </h2>

@@ -22,11 +22,14 @@ const Footer: React.FC = () => {
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                    <a href="https://github.com/Brillo-Digitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Github">
-                        <Github className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <a href="https://wa.me/2348146269699" target="_blank" rel="noopener noreferrer" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="WhatsApp">
+                        <SiWhatsapp className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
-                    <a href="https://www.linkedin.com/in/brillodigitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/brillodigitals" target="_blank" rel="noopener noreferrer" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="LinkedIn">
                         <Linkedin className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    </a>
+                    <a href="https://github.com/Brillo-Digitals" target="_blank" rel="noopener noreferrer" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Github">
+                        <Github className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
                     <a href="https://x.com/brillodigitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Twitter / X">
                         <SiX className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -39,9 +42,6 @@ const Footer: React.FC = () => {
                     </a>
                     <a href="https://www.tiktok.com/@brillo_digitals" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="TikTok">
                         <SiTiktok className="w-4 h-4 transition-transform group-hover:scale-110" />
-                    </a>
-                    <a href="https://wa.me/2348146269699" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="WhatsApp">
-                        <SiWhatsapp className="w-4 h-4 transition-transform group-hover:scale-110" />
                     </a>
                     <a href="mailto:uthmanadesiyan112@gmail.com" className="p-2 transition-colors rounded-full glass hover:bg-brand hover:text-white group" aria-label="Email">
                         <Mail className="w-4 h-4 transition-transform group-hover:scale-110" />
